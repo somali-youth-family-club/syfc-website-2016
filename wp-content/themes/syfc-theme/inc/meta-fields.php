@@ -116,6 +116,12 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
         //'options'  => $service_array
         'options' => $service_array
       ),
+      array(
+        'name' => 'More Information',
+        'desc' => 'Any other office-specific information, e.g. service-specific hours',
+        'id' => $prefix . 'office_extras',
+        'type' => 'textarea'
+      ),
     ),
   );
 
