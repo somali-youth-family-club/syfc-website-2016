@@ -4,15 +4,15 @@
  */
 
 // custom post type and taxonomy
-add_action('init', 'custom_post_type');
-function custom_post_type() {
+add_action('init', 'event_post_type');
+function event_post_type() {
   $labels = array(
-    'name' => __('Post Type'),
-    'singular_name' => __('Post Type'),
-    'menu_name' => __('Post Type'),
-    'all_items' => __('All Post Types'),
-    'search_items' => __('Search Post Types'),
-    'not_found' => __('No Post Types found'),
+    'name' => __('Events'),
+    'singular_name' => __('Event'),
+    'menu_name' => __('Events'),
+    'all_items' => __('All Events'),
+    'search_items' => __('Search Events'),
+    'not_found' => __('No Events found'),
   );
   $args = array(
     'labels' => $labels,
@@ -25,21 +25,20 @@ function custom_post_type() {
     'hierarchical' => false,
     'show_in_nav_menus' => true,
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-analytics',
+    'menu_icon' => 'dashicons-calendar',
     'hierarchical' => false,
     'supports' => array(
       'title',
       'editor',
       'thumbnail'
     ),
-    'taxonomies' => array( 'custom_tax' ),
     'has_archive' => true,
     'rewrite' => array(
-      'slug' => 'custom',
+      'slug' => 'events',
       'with_front' => false
     ),
   );
-  register_post_type('custom', $args);
+  register_post_type('event', $args);
 }
 //resource cat taxonomy
 add_action( 'init', 'create_custom_taxonomy', 0 );
