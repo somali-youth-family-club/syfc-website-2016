@@ -1,0 +1,9 @@
+{
+  "name": "WP-Bamboo",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "2.1.1",
+    "monkee-mixins": "latest",
+    "normalize.css": "latest"
+  }
+}

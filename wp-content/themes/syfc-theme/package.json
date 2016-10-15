@@ -1,0 +1,23 @@
+{
+  "name": "WP-Bamboo",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-jshint": "latest",
+    "gulp-rename": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-size": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "jshint": "latest",
+    "jshint-stylish": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smhigley/WP-Bamboo"
+  },
+  "author": "Sarah Higley"
+}

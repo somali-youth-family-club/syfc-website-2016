@@ -1,0 +1,59 @@
+// base variables and functions
+
+// em calculation
+$em-base: 16px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-em($value, $base-value: $em-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+@function em-calc($values, $base-value: $em-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+  $emValues: ();
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+  }
+  @return $emValues;
+}
+
+// grid variables
+$row-width: em-calc(1000);
+$total-columns: 12;
+$column-gutter: em-calc(30);
+
+// media queries
+$xlarge-bound: 1200;
+$large-bound: 960;
+$medium-bound: 830;
+$small-bound: 740;
+$xsmall-bound: 440;
+
+$x-small-only: "only screen and (max-width: #{em-calc($xsmall-bound)})";
+$small-only: "only screen and (max-width: #{em-calc($small-bound)})";
+
+$medium-only: "only screen and (min-width: #{em-calc($small-bound + 1)}) and (max-width: #{em-calc($medium-bound)})";
+$medium-up: "only screen and (min-width: #{em-calc($small-bound + 1)})";
+$medium-down: "only screen and (max-width: #{em-calc($medium-bound)})";
+
+$large-only: "only screen and (min-width: #{em-calc($medium-bound + 1)}) and (max-width: #{em-calc($large-bound)})";
+$large-up: "only screen and (min-width: #{em-calc($medium-bound + 1)})";
+$large-down: "only screen and (max-width: #{em-calc($large-bound)})";
+
+$xlarge-only: "only screen and (min-width: #{em-calc($large-bound + 1)}) and (max-width: #{em-calc($xlarge-bound)})";
+$xlarge-up: "only screen and (min-width: #{em-calc($xlarge-bound)})";
+$xlarge-down: "only screen and (max-width: #{em-calc($xlarge-bound)})";
+
+// color variables
+
+// spacing variables
+
+// fonts
