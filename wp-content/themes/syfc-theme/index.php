@@ -4,6 +4,18 @@
 ?>
 
 <div class="row">
+  <?php
+  $service_array = array();
+  $service_query = get_terms('service', array('hide_empty' => false));
+  print_r($service_query);
+  if( !empty($service_query) && !is_wp_error($service_query) ) {
+   foreach( $service_query as $service ) {
+     print_r($service);
+     $service_array[$service->term_id] = $service->name;
+   }
+  }
+  print_r($service_array);
+  ?>
   <?php if (!have_posts()) : ?>
     <div class="alert">
       <?php _e('Sorry, no results were found', 'mboy'); ?>

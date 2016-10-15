@@ -7,7 +7,7 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
   if ( !class_exists( 'RW_Meta_Box' ) )
     return;
 
-  $prefix = 'secmol_';
+  $prefix = 'syafc_';
 
   // event meta box
   $meta_boxes[] = array(
@@ -18,9 +18,23 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
     'priority' => 'high',
     'fields' => array(
       array(
-        'name' => 'Start',
-        'desc' => 'Choose a start date for this event (required)',
-        'id' => $prefix . 'event_start',
+        'name' => 'Event Type',
+        'desc' => 'Is it an Outreach, Workshop, or Community Cafe event?',
+        'id' => $prefix . 'event_type',
+        'type' => 'select',
+        'options'  => array(
+          'workshop' => 'Workshop',
+          'outreach' => 'Outreach',
+          'cafe' => 'Community Cafe',
+          'other' => 'Other'
+        ),
+        'multiple'    => false,
+        'placeholder' => 'Select type',
+      ),
+      array(
+        'name' => 'Date',
+        'desc' => 'Choose a date for this event (required)',
+        'id' => $prefix . 'event_date',
         'type' => 'date',
         'js_options' => array(
           'dateFormat' => 'yy-mm-dd',
@@ -31,143 +45,80 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
         ),
       ),
       array(
-        'name' => 'End',
-        'desc' => 'Choose an end date (optional)',
-        'id' => $prefix . 'event_end',
-        'type' => 'date',
+        'name' => 'Time',
+        'desc' => 'Choose a starting time',
+        'id' => $prefix . 'event_time',
+        'type' => 'time',
         'js_options' => array(
-          'dateFormat' => 'yy-mm-dd',
-          'altFormat' => 'dd-mm-yy',
-          'changeMonth' => true,
-          'changeYear' => true,
+          'timeFormat' => 'h:mm TT',
           'showButtonPanel' => true,
         ),
-      ),
-      array(
-        'name' => 'Location',
-        'desc' => 'Event location, e.g. \'Secmol Campus, Phey\'',
-        'id' => $prefix . 'event_location',
-        'type' => 'text'
-      ),
+      )
     ),
     'validation' => array(
       'rules'    => array(
-        $prefix . 'event_start' => array(
+        $prefix . 'event_date' => array(
+          'required'  => true,
+        ),
+        $prefix . 'event_type' => array(
           'required'  => true,
         ),
       ),
       'messages' => array(
-        $prefix . 'event_start' => array(
-          'required'  => 'An event start date is required',
+        $prefix . 'event_date' => array(
+          'required'  => 'An event date is required',
+        ),
+        $prefix . 'event_type' => array(
+          'required'  => 'Select an event type, or choose other',
         ),
       )
     )
   );
 
-  // publication meta box
+  // office meta box
+  $service_array = array();
+  $service_query = get_terms('service', array('hide_empty' => false));
+  if( !empty($service_query) && !is_wp_error($service_query) ) {
+   foreach( $service_query as $service ) {
+     $service_array[$service->term_id] = $service->name;
+   }
+  }
   $meta_boxes[] = array(
-    'id'       => 'publication_meta',
-    'title'    => 'Publication Files',
-    'pages'    => array( 'publication' ),
+    'id'       => 'office_meta',
+    'title'    => 'Office Information',
+    'pages'    => array( 'office' ),
     'context'  => 'normal',
     'priority' => 'high',
     'fields' => array(
       array(
-        'name' => 'Publication thumbnail',
-        'desc' => 'If available, upload a preview thumbnail for this publication',
-        'id' => $prefix . 'pub_image',
-        'type' => 'image_advanced',
-        'max_file_uploads' => 1,
-      ),
-      array(
-        'name' => 'PDF Attachment',
-        'desc' => 'If available, upload a PDF of the publication',
-        'id' => $prefix . 'pub_pdf',
-        'type' => 'file_input',
-        'max_file_uploads' => 1,
-      ),
-    ),
-  );
-
-  // partner meta box
-  $meta_boxes[] = array(
-    'id'       => 'partner_meta',
-    'title'    => 'Partner Info',
-    'pages'    => array( 'partner' ),
-    'context'  => 'normal',
-    'priority' => 'high',
-    'fields' => array(
-      array(
-        'name' => 'Partner Logo',
-        'desc' => 'If available, upload a logo or image for this partner',
-        'id' => $prefix . 'partner_logo',
-        'type' => 'image_advanced',
-        'max_file_uploads' => 1,
-      ),
-      array(
-        'name' => 'Partner website URL',
-        'desc' => 'Full URL of the partner\'s website',
-        'id' => $prefix . 'partner_url',
+        'name' => 'Office Address',
+        'desc' => 'Where is this office located?',
+        'id' => $prefix . 'office_address',
         'type' => 'text'
       ),
+      array(
+        'name' => 'Phone Number',
+        'desc' => 'Phone number for this office',
+        'id' => $prefix . 'office_phone',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Hours',
+        'desc' => 'Describe the hours of operation, e.g. 9 AM - 5 PM Monday-Friday',
+        'id' => $prefix . 'office_hours',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Services',
+        'desc' => 'Check all services offered at this office',
+        'id' => $prefix . 'office_services',
+        'type' => 'checkbox_list',
+        //'options'  => $service_array
+        'options' => $service_array
+      ),
     ),
   );
 
-  // people meta box
-  $member_types = array('staff' => 'Staff', 'student' => 'Student','board' => 'Board');
-  $meta_boxes[] = array(
-    'id'       => 'person_meta',
-    'title'    => 'Person Info',
-    'pages'    => array( 'people' ),
-    'context'  => 'normal',
-    'priority' => 'high',
-    'fields' => array(
-      array(
-        'name' => 'Student, staff or board?',
-        'desc' => '',
-        'id' => $prefix . 'member_type',
-        'type' => 'select',
-        'options'  => $member_types,
-        'multiple'    => false,
-        'placeholder' => 'Select type',
-      ),
-      array(
-        'name' => 'Role/Information',
-        'desc' => 'The staff or board member\'s role or the student\'s information',
-        'id' => $prefix . 'person_info',
-        'type' => 'textarea'
-      ),
-      array(
-        'name' => 'Currently active?',
-        'id'   => $prefix . 'person_active',
-        'type' => 'checkbox',
-        'std'  => 1,
-      )
-    ),
-  );
-
-  // Staff/Student page
-  $meta_boxes[] = array(
-    'id'       => 'people_page_meta',
-    'title'    => 'Page Options',
-    'pages'    => array( 'page' ),
-    'only_on'    => array(
-      'template' => array( 'templates/page-people.php'),
-    ),
-    'context'  => 'normal',
-    'priority' => 'high',
-    'fields' => array(
-      array(
-        'name' => 'Student, staff or board?',
-        'desc' => 'Which category should be shown on this page?',
-        'id' => $prefix . 'show_people',
-        'type' => 'select',
-        'options'  => $member_types,
-        'multiple'    => false,
-        'placeholder' => 'Select type',
-      )
-    ),
-  );
 
   // Home page
   $page_array = array();

@@ -11,6 +11,7 @@ function event_post_type() {
     'singular_name' => __('Event'),
     'menu_name' => __('Events'),
     'all_items' => __('All Events'),
+    'add_new_item' => __('Add New Event'),
     'search_items' => __('Search Events'),
     'not_found' => __('No Events found'),
   );
@@ -40,27 +41,65 @@ function event_post_type() {
   );
   register_post_type('event', $args);
 }
-//resource cat taxonomy
-add_action( 'init', 'create_custom_taxonomy', 0 );
-function create_custom_taxonomy() {
+
+// office content type
+add_action('init', 'office_post_type');
+function office_post_type() {
+  $labels = array(
+    'name' => __('Offices'),
+    'singular_name' => __('Office'),
+    'menu_name' => __('Offices'),
+    'all_items' => __('All Offices'),
+    'add_new_item' => __('Add New Office'),
+    'search_items' => __('Search Offices'),
+    'not_found' => __('No Offices found'),
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'rewrite' => true,
+    'query_var' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'show_in_nav_menus' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-admin-home',
+    'hierarchical' => false,
+    'supports' => array(
+      'title'
+    ),
+    'has_archive' => true,
+    'rewrite' => array(
+      'slug' => 'events',
+      'with_front' => false
+    ),
+  );
+  register_post_type('office', $args);
+}
+
+//services taxonomy
+add_action( 'init', 'create_service_taxonomy', 0 );
+function create_service_taxonomy() {
   // Add new taxonomy, NOT hierarchical (like tags)
   $labels = array(
-    'name' => _x( 'Custom Taxonomy', 'taxonomy general name' ),
-    'singular_name' => _x( 'Custom Taxonomy', 'taxonomy singular name' ),
-    'search_items' => __( 'SearchCustom Taxonomy' ),
-    'popular_items' => __( 'Popular Custom Taxonomies' ),
-    'all_items' => __( 'All Custom Taxonomies' ),
+    'name' => _x( 'Services', 'taxonomy general name' ),
+    'singular_name' => _x( 'Service', 'taxonomy singular name' ),
+    'search_items' => __( 'Search Services' ),
+    'popular_items' => __( 'Popular Services' ),
+    'all_items' => __( 'All Services' ),
     'parent_item' => null,
     'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Custom Taxonomy' ),
-    'update_item' => __( 'Update Custom Taxonomy' ),
-    'add_new_item' => __( 'Add New Custom Taxonomy' ),
-    'new_item_name' => __( 'New Custom Taxonomy Name' ),
-    'separate_items_with_commas' => __( 'Separate Custom Taxonomies with commas' ),
-    'add_or_remove_items' => __( 'Add or remove custom_tax' ),
-    'choose_from_most_used'      => __( 'Choose from the most used custom_taxes' ),
-    'not_found' => __( 'No Custom Taxonomies found.' ),
-    'menu_name' => __( 'Custom Taxonomy' ),
+    'edit_item' => __( 'Edit Service' ),
+    'update_item' => __( 'Update Service' ),
+    'add_new_item' => __( 'Add Service' ),
+    'new_item_name' => __( 'New Service' ),
+    'separate_items_with_commas' => __( 'Separate services with commas' ),
+    'add_or_remove_items' => __( 'Add or remove service' ),
+    'choose_from_most_used'      => __( 'Choose from the most used services' ),
+    'not_found' => __( 'No services found.' ),
+    'menu_name' => __( 'Services' ),
   );
 
   $args = array(
@@ -71,8 +110,8 @@ function create_custom_taxonomy() {
     'hierarchical' => false,
     'update_count_callback' => '_update_post_term_count',
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'custom_tax' ),
+    'rewrite' => array( 'slug' => 'service' ),
   );
 
-  register_taxonomy( 'custom_tax', 'custom', $args );
+  register_taxonomy( 'service', 'office', $args );
 }
