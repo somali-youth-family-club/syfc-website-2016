@@ -4,19 +4,6 @@
   left: -9999px;
 }
 
-.tablet {
-  display: none;
-  @media #{$medium-down} { display: block; }
-}
-.mobile {
-  display: none;
-  @media #{$small-only} { display: block; }
-}
-
-.desktop {
-  @media #{$medium-down} { display: none; }
-}
-
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

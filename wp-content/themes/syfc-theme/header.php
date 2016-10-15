@@ -16,7 +16,7 @@
 
   <?php wp_head(); ?>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400i,700" rel="stylesheet" type="text/css">
   <link rel="icon" href="<?php bloginfo('url'); ?>/images/favicon.png">
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 
