@@ -138,7 +138,7 @@
         ev;
     for (var i = 0; i < events.length; i++) {
       ev = events[i];
-      content += '<li class="event-box"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
+      content += '<li class="event-box ' + ev.event_type + '"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
       content += '<h3>' + ev.post_title + '</h3>';
       content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
       if (ev.need_volunteers === '1') {
@@ -152,9 +152,33 @@
     $el.html(content);
   }
 
-  var $event_container = $('.event-list');
+  // event filter calls
+  var $event_container = $('.event-list'),
+      $filter_container = $('.js-event-filters');
   if ($event_container) {
     get_wordpress_events($event_container, '');
+
+    // attach click event to filter links
+    $filter_container.on('click', 'a', function(e) {
+      e.preventDefault();
+
+      var $this = $(this);
+
+      // don't do anything if it's already selected
+      if ($this.hasClass('selected')) {
+        return;
+      }
+
+      // update classes
+      $filter_container.find('a').removeClass('selected');
+      $this.addClass('selected');
+
+      var type = $this.data('type');
+      if (type === 'all') {
+        type = '';
+      }
+      get_wordpress_events($event_container, type);
+    });
   }
 
 }(jQuery));

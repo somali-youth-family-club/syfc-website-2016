@@ -13,6 +13,16 @@
   <div class="nested row">
     <ul class="event-list menu" data-nonce="<?php echo $nonce; ?>"></ul>
     <aside class="event-filters">
+      <div class="filter-box">
+        <h4>Filter by Event Type</h4>
+        <ul class="menu js-event-filters">
+          <?php # these are defined in inc/meta-fields.php // would be good to define only once ?>
+          <li><a href="#" data-type="all" class="event-filter selected">All Events</a></li>
+          <li><a href="#" data-type="workshop" class="event-filter">Workshop</a></li>
+          <li><a href="#" data-type="cafe" class="event-filter">Community Cafe</a></li>
+          <li><a href="#" data-type="outreach" class="event-filter">Outreach</a></li>
+        </ul>
+      </div>
     </aside>
   </div>
 </div>
