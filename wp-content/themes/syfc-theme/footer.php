@@ -13,7 +13,7 @@
 ?>
 
 <footer class="page-footer" role="contentinfo">
-  <div class="row">
+  <div class="row footer-row">
     <div class="hotline column">
       <p><label for="hotline">Hotline:</label> 206.779.0138</p>
       <p>Between 8:00 am and 10:00 pm</p>

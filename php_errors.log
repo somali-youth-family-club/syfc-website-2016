@@ -10,3 +10,280 @@
 [16-Oct-2016 15:01:30 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
 [16-Oct-2016 15:04:49 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
 [16-Oct-2016 15:04:49 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:17:49 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:17:49 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:17:49 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:18:52 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:18:52 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('nav_menu') ORDER BY t.name ASC  made by wp_get_nav_menus, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'page' GROUP BY post_status made by wp_count_posts
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id = 2 made by is_nav_menu, wp_get_nav_menu_object, get_term, WP_Term::get_instance
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.slug = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by is_nav_menu, wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.name = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by is_nav_menu, wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT ID FROM wp_posts AS p LEFT JOIN wp_postmeta AS m ON p.ID = m.post_id WHERE post_type = 'nav_menu_item' AND post_status = 'draft' AND meta_key = '_menu_item_orphaned' AND meta_value < '1474039145' made by require_once('wp-admin/admin-header.php'), do_action('admin_head-nav-menus.php'), call_user_func_array, _wp_delete_orphaned_draft_menu_items
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'page' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.menu_order ASC, wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'event' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'office' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') ORDER BY t.name ASC  made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') ORDER BY t.name ASC LIMIT 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC LIMIT 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id = 2 made by wp_get_nav_menu_object, get_term, WP_Term::get_instance
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.slug = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:19:05 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.name = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('nav_menu') ORDER BY t.name ASC  made by wp_get_nav_menus, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'page' GROUP BY post_status made by wp_count_posts
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT ID FROM wp_posts AS p LEFT JOIN wp_postmeta AS m ON p.ID = m.post_id WHERE post_type = 'nav_menu_item' AND post_status = 'draft' AND meta_key = '_menu_item_orphaned' AND meta_value < '1474039146' made by require_once('wp-admin/admin-header.php'), do_action('admin_head-nav-menus.php'), call_user_func_array, _wp_delete_orphaned_draft_menu_items
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'page' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.menu_order ASC, wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'event' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'office' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_title ASC LIMIT 0, 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_post_type_meta_box, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') ORDER BY t.name ASC  made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') ORDER BY t.name ASC LIMIT 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC LIMIT 50 made by do_accordion_sections, call_user_func, wp_nav_menu_item_taxonomy_meta_box, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id = 2 made by wp_get_nav_menu_object, get_term, WP_Term::get_instance
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.slug = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:19:06 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.name = '2' AND tt.taxonomy = 'nav_menu' LIMIT 1 made by wp_get_nav_menu_object, get_term_by
+[16-Oct-2016 15:20:08 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:20:08 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:21:08 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:21:08 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:23:09 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:23:09 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:25:10 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:25:10 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:27:11 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:27:11 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:29:12 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:29:12 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:45:30 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:45:30 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:46:30 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:46:30 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:48:31 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:48:31 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:50:20 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:50:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:50:23 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:50:23 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:50:23 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' GROUP BY post_status made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_right_now, wp_count_posts
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'page' GROUP BY post_status made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_right_now, wp_count_posts
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'future'))  ORDER BY wp_posts.post_date ASC LIMIT 0, 5 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_posts, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_posts, WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query SELECT  wp_comments.comment_ID FROM wp_comments  WHERE ( ( comment_approved = '0' OR comment_approved = '1' ) )  ORDER BY wp_comments.comment_date_gmt DESC LIMIT 25 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_site_activity, wp_dashboard_recent_comments, get_comments, WP_Comment_Query->query, WP_Comment_Query->get_comments, WP_Comment_Query->get_comment_ids
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts WHERE ID = 3 LIMIT 1 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_post, WP_Post::get_instance
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:14 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/wp-admin/includes/post.php on line 639
+[16-Oct-2016 15:55:14 UTC] PHP Stack trace:
+[16-Oct-2016 15:55:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/index.php:0
+[16-Oct-2016 15:55:14 UTC] PHP   2. wp_dashboard() /home/ubuntu/workspace/wp-admin/index.php:136
+[16-Oct-2016 15:55:14 UTC] PHP   3. do_meta_boxes() /home/ubuntu/workspace/wp-admin/includes/dashboard.php:221
+[16-Oct-2016 15:55:14 UTC] PHP   4. call_user_func:{/home/ubuntu/workspace/wp-admin/includes/template.php:1045}() /home/ubuntu/workspace/wp-admin/includes/template.php:1045
+[16-Oct-2016 15:55:14 UTC] PHP   5. wp_dashboard_quick_press() /home/ubuntu/workspace/wp-admin/includes/template.php:1045
+[16-Oct-2016 15:55:14 UTC] PHP   6. get_default_post_to_edit() /home/ubuntu/workspace/wp-admin/includes/dashboard.php:478
+[16-Oct-2016 15:55:14 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_author IN (1)  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'draft'))  ORDER BY wp_posts.post_modified DESC LIMIT 0, 4 made by wp_dashboard, do_meta_boxes, call_user_func, wp_dashboard_quick_press, wp_dashboard_recent_drafts, get_posts, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 15:55:18 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:55:18 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:55:20 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/wp-admin/includes/post.php on line 639
+[16-Oct-2016 15:55:20 UTC] PHP Stack trace:
+[16-Oct-2016 15:55:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post-new.php:0
+[16-Oct-2016 15:55:20 UTC] PHP   2. get_default_post_to_edit() /home/ubuntu/workspace/wp-admin/post-new.php:83
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT ID
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'audio%'
+		LIMIT 1
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT ID
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'video%'
+		LIMIT 1
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		ORDER BY post_date DESC
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_name FROM wp_posts WHERE post_name = '' AND post_type = 'post' AND ID != 0 LIMIT 1 made by include('wp-admin/edit-form-advanced.php'), get_sample_permalink_html, get_sample_permalink, wp_unique_post_slug
+[16-Oct-2016 15:55:20 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query SELECT  COUNT(*) FROM wp_comments  WHERE ( ( comment_approved = '0' OR comment_approved = '1' ) )  ORDER BY wp_comments.comment_date_gmt DESC LIMIT 1 made by include('wp-admin/edit-form-advanced.php'), do_meta_boxes, call_user_func, post_comment_meta_box, get_comments, WP_Comment_Query->query, WP_Comment_Query->get_comments, WP_Comment_Query->get_comment_ids
+[16-Oct-2016 15:56:25 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:56:25 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:57:08 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:57:08 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:57:08 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SHOW FULL COLUMNS FROM `wp_posts` made by get_default_post_to_edit, wp_insert_post
+[16-Oct-2016 15:58:24 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/wp-admin/includes/post.php on line 639
+[16-Oct-2016 15:58:24 UTC] PHP Stack trace:
+[16-Oct-2016 15:58:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-admin/post-new.php:0
+[16-Oct-2016 15:58:24 UTC] PHP   2. get_default_post_to_edit() /home/ubuntu/workspace/wp-admin/post-new.php:83
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT ID
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'audio%'
+		LIMIT 1
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT ID
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		AND post_mime_type LIKE 'video%'
+		LIMIT 1
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+		FROM wp_posts
+		WHERE post_type = 'attachment'
+		ORDER BY post_date DESC
+	 made by include('wp-admin/edit-form-advanced.php'), wp_enqueue_media
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_name FROM wp_posts WHERE post_name = '' AND post_type = 'post' AND ID != 0 LIMIT 1 made by include('wp-admin/edit-form-advanced.php'), get_sample_permalink_html, get_sample_permalink, wp_unique_post_slug
+[16-Oct-2016 15:58:24 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query SELECT  COUNT(*) FROM wp_comments  WHERE ( ( comment_approved = '0' OR comment_approved = '1' ) )  ORDER BY wp_comments.comment_date_gmt DESC LIMIT 1 made by include('wp-admin/edit-form-advanced.php'), do_meta_boxes, call_user_func, post_comment_meta_box, get_comments, WP_Comment_Query->query, WP_Comment_Query->get_comments, WP_Comment_Query->get_comment_ids
+[16-Oct-2016 15:59:54 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 15:59:54 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:00:55 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:00:55 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:02:56 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:02:56 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:04:57 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:04:57 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:06:57 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:06:57 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:08:58 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:08:58 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:10:59 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:10:59 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:13:00 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:13:00 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:14:56 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:14:56 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:15:47 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:15:47 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:31 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 16:16:31 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:31 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:39 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 16:16:39 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:39 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+			SELECT COUNT( 1 )
+			FROM wp_posts
+			WHERE post_type = 'office'
+			AND post_status NOT IN ( 'trash','auto-draft','inherit' )
+			AND post_author = 1
+		 made by _get_list_table, WP_Posts_List_Table->__construct
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'office' GROUP BY post_status made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, get_available_post_statuses, wp_count_posts
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+		SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('wp-admin','edit-php')
+		AND post_type IN ('page','attachment')
+	 made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, wp, WP->main, WP->parse_request, get_page_by_path
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'office' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'future' OR wp_posts.post_status = 'draft' OR wp_posts.post_status = 'pending' OR wp_posts.post_status = 'private')  ORDER BY wp_posts.post_date DESC LIMIT 0, 20 made by WP_Posts_List_Table->prepare_items, wp_edit_posts_query, wp, WP->main, WP->query_posts, WP_Query->query, WP_Query->get_posts
+[16-Oct-2016 16:16:46 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query 
+			SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
+			FROM wp_posts
+			WHERE post_type = 'office'
+			AND post_status != 'auto-draft' AND post_status != 'trash'
+			ORDER BY post_date DESC
+		 made by WP_List_Table->display, WP_List_Table->display_tablenav, WP_Posts_List_Table->extra_tablenav, WP_List_Table->months_dropdown
+[16-Oct-2016 16:16:48 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:48 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_comments' doesn't exist for query 
+		SELECT comment_approved, COUNT( * ) AS total
+		FROM wp_comments
+		
+		GROUP BY comment_approved
+	 made by require_once('wp-admin/admin.php'), require('wp-admin/menu.php'), wp_count_comments, get_comment_count
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC  made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_posts' doesn't exist for query SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_posts.post_title ASC made by require_once('wp-admin/admin.php'), do_action('admin_init'), call_user_func_array, bamboo_register_meta_boxes, get_pages
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  COUNT(*) FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service')   made by WP_Terms_List_Table->prepare_items, wp_count_terms, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') AND tt.count > 0 ORDER BY tt.count DESC LIMIT 45 made by wp_tag_cloud, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[16-Oct-2016 16:16:52 UTC] WordPress database error Table 'c9.wp_terms' doesn't exist for query SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('service') ORDER BY t.name ASC LIMIT 20 made by WP_List_Table->display, WP_Terms_List_Table->display_rows_or_placeholder, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms

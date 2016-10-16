@@ -29,7 +29,7 @@ footer {
     max-width: 90%;
 }
 
-.row > div {
+.footer-row {
     @include grid-column(3);
     width: 33%;
     text-align: center;

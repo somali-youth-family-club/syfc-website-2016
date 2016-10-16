@@ -1158,7 +1158,7 @@ footer {
 .row {
   max-width: 90%; }
 
-.row > div {
+.footer-row {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 25%;
