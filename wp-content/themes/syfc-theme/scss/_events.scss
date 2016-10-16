@@ -1,3 +1,5 @@
+$bp-events: '(min-width: 760px)';
+
 @include keyframes(spinner) {
   0% {
     @include rotate(0deg);
@@ -8,8 +10,13 @@
 };
 .event-list {
   position: relative;
-  @include grid-column(8);
+  @include grid-column(12);
   min-height: 50px;
+
+  @include breakpoint($bp-events) {
+    @include grid-column(8);
+  }
+
   &.loading {
     &:after {
       content: "";
@@ -156,7 +163,10 @@
 
 // filtering
 .event-filters {
-  @include grid-column(4);
+  @include grid-column(12);
+  @include breakpoint($bp-events) {
+    @include grid-column($columns: 4, $float: right);
+  }
 }
 
 .filter-box {
@@ -248,7 +258,7 @@ div.entry {
 }
 
 div.event-date {
-  font-size: .8em; 
+  font-size: .8em;
 }
 
 div.event-time:before {

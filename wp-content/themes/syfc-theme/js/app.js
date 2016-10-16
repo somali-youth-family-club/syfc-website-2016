@@ -939,7 +939,7 @@
     $(this).toggleClass('open');
   });
   // max width set in _header.scss
-  if (Modernizr.mq('only screen and (max-width: 869px)')) {
+  if (Modernizr.mq('only screen and (max-width: 929px)')) {
     // do mobile menu stuff
   }
 

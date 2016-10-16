@@ -56,8 +56,8 @@
 
 // mobile menu trigger
 // breakpoint also used in main.js for modernizr test
-$bp-menu: '(min-width: 870px)';
-$bp-menu-mobile: '(max-width: 869px)';
+$bp-menu: '(min-width: 930px)';
+$bp-menu-mobile: '(max-width: 929px)';
 .mobile-menu-trigger {
   position: relative;
   display: block;
@@ -175,7 +175,7 @@ $bp-menu-mobile: '(max-width: 869px)';
       }
     }
   }
-  .active a, a:hover, a:focus {
+  a:hover, a:focus {
     &:after {
       @include transform(scaleX(1));
     }

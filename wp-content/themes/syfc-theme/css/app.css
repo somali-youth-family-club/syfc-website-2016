@@ -485,8 +485,14 @@ html {
 .third {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 33.33333%;
+  width: 100%;
   float: left; }
+  @media (min-width: 620px) {
+    .third {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 33.33333%;
+      float: left; } }
 
 @font-face {
   font-family: 'icomoon';
@@ -839,11 +845,11 @@ table {
     -ms-transform: scaleY(1);
     -o-transform: scaleY(1);
     transform: scaleY(1); }
-  @media (min-width: 870px) {
+  @media (min-width: 930px) {
     .mobile-menu-trigger {
       display: none; } }
 
-@media (max-width: 869px) {
+@media (max-width: 929px) {
   .main-menu {
     position: absolute;
     visibility: hidden;
@@ -867,7 +873,7 @@ table {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; } }
-@media (min-width: 870px) {
+@media (min-width: 930px) {
   .main-menu li {
     display: inline-block; } }
 .main-menu a {
@@ -903,7 +909,7 @@ table {
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
     transform: scaleX(1); }
-.main-menu .active a:after, .main-menu a:hover:after, .main-menu a:focus:after {
+.main-menu a:hover:after, .main-menu a:focus:after {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -911,7 +917,7 @@ table {
   transform: scaleX(1); }
 .main-menu .dropdown {
   position: relative; }
-  @media (min-width: 870px) {
+  @media (min-width: 930px) {
     .main-menu .dropdown:hover a {
       background-color: #494949; }
     .main-menu .dropdown:hover .dropdown-menu {
@@ -934,7 +940,7 @@ table {
   -ms-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease; }
-  @media (min-width: 870px) {
+  @media (min-width: 930px) {
     .main-menu .dropdown-menu {
       opacity: 0;
       filter: alpha(opacity=0);
@@ -1066,12 +1072,12 @@ table {
     content: "";
     font-size: 30px; }
 
-footer {
+.page-footer {
   background-color: #1b1b1b;
   color: #b1b7be;
   width: 100%;
-  height: 100px;
-  padding: 2em; }
+  padding: 2em;
+  margin-top: 6.25em; }
 
 .footer-row > .column {
   padding-left: 0.9375em;
@@ -1081,10 +1087,9 @@ footer {
 
 .hotline {
   text-align: left;
-  font-size: .6em; }
+  font-size: 14px; }
 
 .copyright {
-  font-size: .6em;
   text-align: center; }
 
 .footer-links {
@@ -1224,12 +1229,12 @@ div.picture {
     content: "";
     font-size: 30px; }
 
-footer {
+.page-footer {
   background-color: #1b1b1b;
   color: #b1b7be;
   width: 100%;
-  height: 100px;
-  padding: 2em; }
+  padding: 2em;
+  margin-top: 6.25em; }
 
 .footer-row > .column {
   padding-left: 0.9375em;
@@ -1239,10 +1244,9 @@ footer {
 
 .hotline {
   text-align: left;
-  font-size: .6em; }
+  font-size: 14px; }
 
 .copyright {
-  font-size: .6em;
   text-align: center; }
 
 .footer-links {
@@ -1313,9 +1317,15 @@ label {
   position: relative;
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 66.66667%;
+  width: 100%;
   float: left;
   min-height: 50px; }
+  @media (min-width: 760px) {
+    .event-list {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 66.66667%;
+      float: left; } }
   .event-list.loading:after {
     content: "";
     position: absolute;
@@ -1434,8 +1444,14 @@ label {
 .event-filters {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 33.33333%;
+  width: 100%;
   float: left; }
+  @media (min-width: 760px) {
+    .event-filters {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 33.33333%;
+      float: right; } }
 
 .filter-box {
   padding: 1.5em 1.25em;
@@ -1532,14 +1548,19 @@ div.event-time:before {
   .home-banner-callouts:after {
     clear: both; }
   .home-banner-callouts a {
-    display: inline-block;
+    display: block;
     width: 270px;
-    padding: 0.625em 3.125em 2.5em;
+    padding: 0.625em 3.125em 1.25em;
+    margin: 0 auto;
     color: #fff;
     text-align: center; }
+    @media (min-width: 550px) {
+      .home-banner-callouts a {
+        display: inline-block;
+        padding: 0.625em 3.125em 2.5em; } }
     .home-banner-callouts a:before {
       display: inline-block;
-      font-size: 100px;
+      font-size: 60px;
       line-height: 1;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
@@ -1556,6 +1577,9 @@ div.event-time:before {
       -ms-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease; }
+      @media (min-width: 550px) {
+        .home-banner-callouts a:before {
+          font-size: 100px; } }
     .home-banner-callouts a:hover:before, .home-banner-callouts a:focus:before {
       color: #3498DB;
       -webkit-transform: scale(1.15);
@@ -1582,8 +1606,14 @@ div.event-time:before {
 .home-about-section .about-blurb {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 41.66667%;
+  width: 100%;
   float: left; }
+  @media (min-width: 620px) {
+    .home-about-section .about-blurb {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 41.66667%;
+      float: left; } }
   .home-about-section .about-blurb p {
     color: #7D8792; }
 .home-about-section .logo {
@@ -1591,8 +1621,14 @@ div.event-time:before {
 .home-about-section .about-content {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 50%;
-  float: right; }
+  width: 100%;
+  float: left; }
+  @media (min-width: 620px) {
+    .home-about-section .about-content {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 50%;
+      float: right; } }
 
 .home-history-section {
   margin: 6.25em 0;
@@ -1601,9 +1637,15 @@ div.event-time:before {
 .history-content {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 50%;
+  width: 100%;
   float: left;
   padding-top: 1.25em; }
+  @media (min-width: 620px) {
+    .history-content {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 50%;
+      float: left; } }
   .history-content h2 {
     color: #fff;
     text-align: center; }
@@ -1611,8 +1653,14 @@ div.event-time:before {
 .history-image {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 50%;
+  width: 100%;
   float: left; }
+  @media (min-width: 620px) {
+    .history-image {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      width: 50%;
+      float: left; } }
   .history-image .image-wrapper {
     position: relative;
     margin: -20px 0;
@@ -1630,7 +1678,8 @@ div.event-time:before {
     display: block; }
 
 .home-callouts > div {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 50px; }
   .home-callouts > div:before {
     display: block;
     font-size: 100px;

@@ -27,5 +27,8 @@ html {
 }
 
 .third {
-  @include grid-column(4);
+  @include grid-column(12);
+  @include breakpoint('(min-width: 620px)') {
+    @include grid-column(4);
+  }
 }

@@ -32,16 +32,16 @@
         $services_slug = get_the_permalink($services_id);
     ?>
       <div class="home-banner-callouts">
-        <a href="<?php echo $services_slug . rwmb_meta('syafc_education_service_slug'); ?>" class="education">
+        <a href="<?php echo $services_slug . '#' . rwmb_meta('syafc_education_service_slug'); ?>" class="education">
           <span><?php echo rwmb_meta('syafc_education_service_name')?></span>
         </a>
-        <a href="<?php echo $services_slug . rwmb_meta('syafc_social_service_slug'); ?>" class="social-services">
+        <a href="<?php echo $services_slug . '#' . rwmb_meta('syafc_social_service_slug'); ?>" class="social-services">
           <span><?php echo rwmb_meta('syafc_social_service_name')?></span>
         </a>
-        <a href="<?php echo $services_slug . rwmb_meta('syafc_family_service_slug'); ?>" class="family">
+        <a href="<?php echo $services_slug . '#' . rwmb_meta('syafc_family_service_slug'); ?>" class="family">
           <span><?php echo rwmb_meta('syafc_family_service_name')?></span>
         </a>
-        <a href="<?php echo $services_slug . rwmb_meta('syafc_immigration_service_slug'); ?>" class="immigration">
+        <a href="<?php echo $services_slug . '#' . rwmb_meta('syafc_immigration_service_slug'); ?>" class="immigration">
           <span><?php echo rwmb_meta('syafc_immigration_service_name')?></span>
         </a>
       </div>

@@ -16,12 +16,12 @@
     }
 }
 
-footer {
+.page-footer {
     background-color: $dark;
     color: lighten($grey, 40%);
     width: 100%;
-    height: 100px;  
     padding: 2em;
+    margin-top: em-calc(100);
 }
 
 
@@ -31,11 +31,10 @@ footer {
 
 .hotline {
     text-align: left;
-    font-size: .6em;
+    font-size: 14px;
 }
 
 .copyright {
-    font-size: .6em;
     text-align: center;
 }
 
