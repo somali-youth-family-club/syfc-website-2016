@@ -4,9 +4,6 @@
   // google maps
   var key = 'AIzaSyCvvaeIF0uoGD-0TAt92sv2x3aTZGqgKbg';
 
-  function getCoordsFromAddress(address, callback) {
-    //
-  }
   function displayMapBox(el, address) {
     console.log("displaying map on", el);
     var geocoder, map;
@@ -42,5 +39,38 @@
     console.log(address);
     displayMapBox(this, address);
   });
+
+  // accordions
+  var $accordions = $('.js-accordion-content');
+  if ($accordions.length > 0) {
+    console.log('we have accordions');
+    $accordions.each(function() {
+      var $this = $(this);
+      $this.data('height', $this.height());
+      this.style.height = 0;
+    });
+    $(document.body).on('click', '.js-accordion-trigger', function(e) {
+      e.preventDefault();
+
+      var $this = $(this),
+          $content = $(this).next('.js-accordion-content');
+
+      if ($this.hasClass('open')) {
+        $this.removeClass('open');
+        $content.css('height', 0);
+      } else {
+        $this.addClass('open');
+        $content.css('height', $content.data('height') + 'px');
+      }
+    });
+
+    // trigger click if linking to a specific accordion
+    if (window.location.hash) {
+      var target = document.getElementById(window.location.hash.substring(1));
+      if (target) {
+        $(target).trigger('click');
+      }
+    }
+  }
 
 }(jQuery));

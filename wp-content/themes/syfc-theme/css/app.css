@@ -759,3 +759,56 @@ table {
     .map-box {
       padding: 0;
       height: 250px; } }
+
+.js-accordion-trigger {
+  cursor: pointer; }
+  .js-accordion-trigger:before, .js-accordion-trigger:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 40px;
+    height: 8px;
+    margin-top: -4px;
+    background: #fff;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+  .js-accordion-trigger:after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .js-accordion-trigger.open:before, .js-accordion-trigger.open:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.js-accordion-content {
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.service-accordion {
+  margin-bottom: 0.75em; }
+
+.service-summary {
+  position: relative;
+  padding: 0.625em 1.5em 1.25em;
+  background-color: #34495E;
+  color: #fff; }
+  .service-summary h2 {
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase; }
+  .service-summary p {
+    margin: 0;
+    max-width: 550px; }

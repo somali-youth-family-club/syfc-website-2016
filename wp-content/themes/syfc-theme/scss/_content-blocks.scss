@@ -50,3 +50,53 @@
     height: 250px;
   };
 }
+
+// generic accordions
+.js-accordion-trigger {
+  cursor: pointer;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 40px;
+    height: 8px;
+    margin-top: -4px;
+    background: #fff;
+    @include transition(all 0.4s ease);
+  }
+  &:after {
+    @include rotate(90deg);
+  }
+  &.open {
+    &:before, &:after {
+      @include rotate(180deg);
+    }
+  }
+}
+.js-accordion-content {
+  overflow: hidden;
+  @include transition(all 0.5s ease);
+}
+
+// service accordions
+.service-accordion {
+  margin-bottom: em-calc(12);
+}
+.service-summary {
+  position: relative;
+  padding: em-calc(10) em-calc(24) em-calc(20);
+  background-color: $dark-alt;
+  color: #fff;
+
+  h2 {
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  p {
+    margin: 0;
+    max-width: 550px;
+  }
+}

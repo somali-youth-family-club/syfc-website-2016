@@ -32,9 +32,9 @@
         }
         if( !empty($service_offices) ):
   ?>
-  <div class="accordion js-accordion">
-    <div class="js-accordion-trigger service-summary">
-      <h2><a href="#"><?php echo $service->name; ?></a></h2>
+  <div class="service-accordion js-accordion">
+    <div class="js-accordion-trigger service-summary" id="<?php echo $service->slug; ?>">
+      <h2><?php echo $service->name; ?></h2>
       <p><?php echo $service->description; ?></p>
     </div>
     <div class="js-accordion-content">
