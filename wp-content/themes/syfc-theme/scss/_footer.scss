@@ -3,7 +3,7 @@
     &:before {
         content: $icon-facebook;
         @extend .icon;
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -12,7 +12,7 @@
     &:before {
         content: $icon-twitter;
         @extend .icon;
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -22,6 +22,11 @@ footer {
     width: 100%;
     height: 100px;  
     padding: 2em;
+    font-size: .6em;
+}
+
+.row {
+    max-width: 90%;
 }
 
 .row > div {
@@ -36,7 +41,7 @@ footer {
 
 .footer-links {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 1em;
     a {
         text-align: center;
         color: $blue;
@@ -44,8 +49,7 @@ footer {
 }
 
 label {
-    border: 2px solid red;
-        display: block;
+        display: inline-block;
         margin-right: 2%;
     }
 

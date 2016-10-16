@@ -26,7 +26,6 @@
     </div>
     
     <div class="footer-links column">
-      <label for="social-media">Social Media:</label>
       <?php if($phone) { echo '<span class="phone">' . $phone . '</span>'; } ?>
       <?php if($email) { echo '<a href="mailto:' . $email . '" class="email">Email Us</a>'; } ?>
       <?php if($twitter) { echo '<a href="' . $twitter . '" class="twitter">Twitter</a>'; } ?>
