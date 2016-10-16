@@ -113,7 +113,6 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
         'desc' => 'Check all services offered at this office',
         'id' => $prefix . 'office_services',
         'type' => 'checkbox_list',
-        //'options'  => $service_array
         'options' => $service_array
       ),
       array(

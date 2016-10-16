@@ -149,7 +149,7 @@ add_action('wp_footer', 'bamboo_google_analytics', 20);
  */
 function bamboo_search_filter( $query ) {
     if ( $query->is_search ) {
-        $query->set( 'post_type', array('post','page') );
+        $query->set( 'post_type', array('post','page','event','office') );
     }
     return $query;
 }
