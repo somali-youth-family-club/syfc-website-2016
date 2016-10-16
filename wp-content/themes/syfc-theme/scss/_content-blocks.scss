@@ -10,6 +10,7 @@
 }
 .office-meta {
   margin-bottom: em-calc(6);
+
   .phone, .hours, &.address {
     display: inline-block;
     padding-right: 12px;
@@ -46,6 +47,6 @@
   margin: em-calc(10) 0 em-calc(6);
   @include breakpoint($bp-layout) {
     padding: 0;
-    height: 250px; 
+    height: 250px;
   };
 }
