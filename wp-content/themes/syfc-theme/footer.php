@@ -15,7 +15,7 @@
 <footer class="page-footer" role="contentinfo">
   <div class="row">
     <div class="hotline column">
-      <p>Hotline: 206.779.0138</p>
+      <p><label for="hotline">Hotline:</label> 206.779.0138</p>
       <p>Between 8:00 am and 10:00 pm</p>
     </div>
     
@@ -26,6 +26,7 @@
     </div>
     
     <div class="footer-links column">
+      <label for="social-media">Social Media:</label>
       <?php if($phone) { echo '<span class="phone">' . $phone . '</span>'; } ?>
       <?php if($email) { echo '<a href="mailto:' . $email . '" class="email">Email Us</a>'; } ?>
       <?php if($twitter) { echo '<a href="' . $twitter . '" class="twitter">Twitter</a>'; } ?>

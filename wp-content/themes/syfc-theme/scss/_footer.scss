@@ -36,13 +36,18 @@ footer {
 
 .footer-links {
     display: inline-block;
-    
     margin-top: 10px;
     a {
         text-align: center;
         color: $blue;
     }
 }
+
+label {
+    border: 2px solid red;
+        display: block;
+        margin-right: 2%;
+    }
 
 .hotline {
     float: right;
