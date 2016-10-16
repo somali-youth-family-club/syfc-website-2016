@@ -72,7 +72,7 @@ function office_post_type() {
     ),
     'has_archive' => true,
     'rewrite' => array(
-      'slug' => 'events',
+      'slug' => 'offices',
       'with_front' => false
     ),
   );
