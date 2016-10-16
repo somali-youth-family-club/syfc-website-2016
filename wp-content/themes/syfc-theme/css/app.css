@@ -482,6 +482,12 @@ html {
   .content-row:after {
     clear: both; }
 
+.third {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 33.33333%;
+  float: left; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("fonts/icomoon.eot?");
@@ -507,7 +513,15 @@ body {
   white-space: nowrap;
   overflow: hidden; }
 
-.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before {
+.visually-hidden {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before, .home-callouts > div:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -532,7 +546,7 @@ h4, h5, h6 {
 
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 36px;
+  font-size: 38px;
   font-weight: normal;
   text-transform: uppercase;
   text-align: center;
@@ -554,11 +568,11 @@ h3 {
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   color: #646c75; }
   @media (min-width: 700px) {
     h3 {
-      font-size: 34px; } }
+      font-size: 28px; } }
 
 h4 {
   font-size: 18px;
@@ -567,7 +581,7 @@ h4 {
   color: #3498DB; }
   @media (min-width: 700px) {
     h4 {
-      font-size: 26px; } }
+      font-size: 24px; } }
 
 h5 {
   text-transform: uppercase; }
@@ -1497,3 +1511,80 @@ div.event-date {
 
 div.event-time:before {
   content: ""; }
+
+.home-about-section .about-blurb {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 41.66667%;
+  float: left; }
+  .home-about-section .about-blurb p {
+    color: #7D8792; }
+.home-about-section .logo {
+  max-width: 280px; }
+.home-about-section .about-content {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: right; }
+
+.home-history-section {
+  margin: 6.25em 0;
+  background-color: #92abc3; }
+
+.history-content {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+  padding-top: 1.25em; }
+  .history-content h2 {
+    color: #fff;
+    text-align: center; }
+
+.history-image {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left; }
+  .history-image .image-wrapper {
+    position: relative;
+    margin: -20px 0;
+    z-index: 1; }
+    .history-image .image-wrapper:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      bottom: 10px;
+      left: 10px;
+      right: -10px;
+      background-color: #3498DB;
+      z-index: -1; }
+  .history-image img {
+    display: block; }
+
+.home-callouts > div {
+  text-align: center; }
+  .home-callouts > div:before {
+    display: block;
+    font-size: 100px;
+    line-height: 1;
+    margin-bottom: 15px; }
+  .home-callouts > div p {
+    text-align: left; }
+.home-callouts .donate-callout:before {
+  content: "";
+  color: #3498DB; }
+.home-callouts .volunteer-callout:before {
+  content: "";
+  color: #2ecc71; }
+.home-callouts .volunteer-callout .button {
+  background-color: #2ecc71; }
+  .home-callouts .volunteer-callout .button:hover, .home-callouts .volunteer-callout .button:focus {
+    background-color: #25a35a; }
+.home-callouts .services-callout:before {
+  content: "";
+  color: #9b59b6; }
+.home-callouts .services-callout .button {
+  background-color: #9b59b6; }
+  .home-callouts .services-callout .button:hover, .home-callouts .services-callout .button:focus {
+    background-color: #7c4792; }

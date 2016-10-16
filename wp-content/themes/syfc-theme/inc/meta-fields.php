@@ -132,6 +132,151 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
     ),
   );
 
+  // Home page
+  $page_array = array();
+  $query_args = array(
+    'post_type' => 'page',
+    'posts_per_page' => -1,
+    'post_status' => 'publish'
+  );
+  $page_query = get_pages($query_args);
+  if( !empty($page_query) && !is_wp_error($page_query) ) {
+    foreach( $page_query as $page ) {
+      $page_array[$page->ID] = $page->post_title;
+    }
+  }
+  $meta_boxes[] = array(
+    'id'       => 'home_meta_about',
+    'title'    => 'About Us Section',
+    'pages'    => array( 'page' ),
+    'only_on'    => array(
+      'template' => array( 'templates/page-home.php'),
+    ),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Tagline',
+        'desc' => 'Short statement of purpose (about one sentence)',
+        'id' => $prefix . 'home_about_tagline',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'About Blurb',
+        'desc' => 'Short excerpt from the About Us page or mission statement',
+        'id' => $prefix . 'home_about_blurb',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'About Us link',
+        'desc' => 'Choose the About Us page',
+        'id' => $prefix . 'home_about_link',
+        'type' => 'select',
+        'options'  => $page_array,
+        'multiple'    => false,
+        'placeholder' => 'Select a page',
+      ),
+    ),
+  );
+  $meta_boxes[] = array(
+    'id'       => 'home_meta_history',
+    'title'    => 'History Section',
+    'pages'    => array( 'page' ),
+    'only_on'    => array(
+      'template' => array( 'templates/page-home.php'),
+    ),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Section Title',
+        'desc' => 'What should the title of this section be? (e.g. "History")',
+        'id' => $prefix . 'home_history_title',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'History Blurb',
+        'desc' => 'A short summary of your organization\'s history (one short paragraph)',
+        'id' => $prefix . 'home_history_blurb',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'Section Image',
+        'desc' => 'Choose or upload an image to display with this section',
+        'id' => $prefix . 'home_history_image',
+        'type' => 'image_advanced',
+        'max_file_uploads' => 1,
+      ),
+    ),
+  );
+  $meta_boxes[] = array(
+    'id'       => 'home_meta_callouts',
+    'title'    => 'Donate/Volunteer/Services',
+    'pages'    => array( 'page' ),
+    'only_on'    => array(
+      'template' => array( 'templates/page-home.php'),
+    ),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Donate description',
+        'desc' => 'A short (one sentence) callout for people to donate',
+        'id' => $prefix . 'home_donate_desc',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'Donate link',
+        'desc' => 'Choose the Donate page',
+        'id' => $prefix . 'home_donate_link',
+        'type' => 'select',
+        'options'  => $page_array,
+        'multiple'    => false,
+        'placeholder' => 'Select a page',
+      ),
+      array(
+        'name' => 'Divider',
+        'id' => 'fake_id',
+        'type' => 'divider'
+      ),
+      array(
+        'name' => 'Volunteer description',
+        'desc' => 'A short (one sentence) callout for people to volunteer',
+        'id' => $prefix . 'home_volunteer_desc',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'Volunteer link',
+        'desc' => 'Choose the Volunteer page',
+        'id' => $prefix . 'home_volunteer_link',
+        'type' => 'select',
+        'options'  => $page_array,
+        'multiple'    => false,
+        'placeholder' => 'Select a page',
+      ),
+      array(
+        'name' => 'Divider',
+        'id' => 'fake_id',
+        'type' => 'divider'
+      ),
+      array(
+        'name' => 'Services description',
+        'desc' => 'A short (one sentence) description of the services page',
+        'id' => $prefix . 'home_services_desc',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => 'Service Page link',
+        'desc' => 'Choose the Services page',
+        'id' => $prefix . 'home_services_link',
+        'type' => 'select',
+        'options'  => $page_array,
+        'multiple'    => false,
+        'placeholder' => 'Select a page',
+      )
+    ),
+  );
+
   foreach ( $meta_boxes as $meta_box ) {
     // Register meta boxes only for some posts/pages
     if ( isset( $meta_box['only_on'] ) && ! bamboo_check_include( $meta_box['only_on'] ) ) {

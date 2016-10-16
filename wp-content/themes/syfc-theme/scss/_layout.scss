@@ -25,3 +25,7 @@ html {
 .content-row {
   @include grid-row($no-columns: true);
 }
+
+.third {
+  @include grid-column(4);
+}

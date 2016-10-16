@@ -1,0 +1,98 @@
+// about section
+.home-about-section {
+  .about-blurb {
+    @include grid-column(5);
+
+    p {
+      color: $grey;
+    }
+  }
+  .logo {
+    max-width: 280px;
+  }
+  .about-content {
+    @include grid-column($columns: 6, $float:right);
+  }
+}
+
+// history section
+.home-history-section {
+  margin: em-calc(100) 0;
+  background-color: #92abc3;
+}
+.history-content {
+  @include grid-column(6);
+  padding-top: em-calc(20);
+
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+}
+.history-image {
+  @include grid-column(6);
+
+  .image-wrapper {
+    position: relative;
+    margin: -20px 0;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      bottom: 10px;
+      left: 10px;
+      right: -10px;
+      background-color: $blue;
+      z-index: -1;
+    }
+  }
+
+  img {
+    display: block;
+  }
+}
+
+// home callouts
+.home-callouts {
+  > div {
+    text-align: center;
+    &:before {
+      @extend .icon;
+      display: block;
+      font-size: 100px;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+  .donate-callout {
+    &:before {
+      content: $icon-donate;
+      color: $blue;
+    }
+  }
+  .volunteer-callout {
+    &:before {
+      content: $icon-volunteer;
+      color: $green;
+    }
+    .button {
+      background-color: $green;
+      &:hover, &:focus { background-color: darken($green, 20%); }
+    }
+  }
+  .services-callout {
+    &:before {
+      content: $icon-people;
+      color: $purple;
+    }
+    .button {
+      background-color: $purple;
+      &:hover, &:focus { background-color: darken($purple, 20%); }
+    }
+  }
+}

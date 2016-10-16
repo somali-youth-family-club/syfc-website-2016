@@ -31,6 +31,14 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+.visually-hidden {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 .icon {
   font-family: $icon-font;
@@ -61,7 +69,7 @@ h4, h5, h6 {
 
 h1 {
   font-family: $heading-font;
-  font-size: 36px;
+  font-size: 38px;
   font-weight: normal;
   text-transform: uppercase;
   text-align: center;
@@ -85,10 +93,10 @@ h3 {
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   color: darken($grey, 20%);
   @include breakpoint($bp-typography) {
-    font-size: 34px;
+    font-size: 28px;
   }
 }
 
@@ -98,7 +106,7 @@ h4 {
   font-weight: normal;
   color: $blue;
   @include breakpoint($bp-typography) {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
