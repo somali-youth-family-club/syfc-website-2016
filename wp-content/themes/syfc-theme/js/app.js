@@ -943,15 +943,12 @@
     // do mobile menu stuff
   }
 
-  // event filtering
-  // gallery ajax wordpress & instagram
-  // ajax memorial gallery filtering/paging
-  function get_wordpress_events(type) {
+  // event filtering ajax call
+  function get_wordpress_events($el, type) {
 		console.log("getting wordpress events, url is", bambooAjax.ajaxurl);
-		var $container = $('.event-list'),
-    		nonce = $container.attr("data-nonce");
+		var nonce = $el.attr("data-nonce");
 
-    $container.addClass('loading');
+    $el.addClass('loading');
 
     $.ajax({
       dataType : "json",
@@ -965,7 +962,7 @@
 				console.log("yay! success!", response);
         if(response.type == "success") {
           console.log(response);
-          //display_gallery(response.gallery, response.pagination);
+          display_events($el, response.events);
         }
         else {
           console.log("error getting events", response);
@@ -976,6 +973,30 @@
       }
     });
   }
-  get_wordpress_events('');
+
+  // event display function
+  function display_events($el, events) {
+    var content = '',
+        ev;
+    for (var i = 0; i < events.length; i++) {
+      ev = events[i];
+      content += '<li><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
+      content += '<h3>' + ev.post_title + '</h3>';
+      content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
+      if (ev.need_volunteers === '1') {
+        content += '<span class="volunteers">We need volunteers!</span>';
+      }
+      content += '<a href="' + ev.permalink + '" class="simple-button">Full Event</a>';
+      content += '</li>';
+    }
+
+    $el.removeClass('loading');
+    $el.html(content);
+  }
+
+  var $event_container = $('.event-list');
+  if ($event_container) {
+    get_wordpress_events($event_container, '');
+  }
 
 }(jQuery));
