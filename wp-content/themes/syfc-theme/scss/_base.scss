@@ -40,8 +40,8 @@ $em-base: 16px;
 }
 
 // global breakpoints
-$bp-layout: '(max-width: 880px)';
-$bp-typography: '(max-width: 700px)';
+$bp-layout: '(min-width: 880px)';
+$bp-typography: '(min-width: 700px)';
 
 // grid variables
 $row-width: em-calc(1000);
@@ -65,6 +65,7 @@ $icon-font: 'icomoon';
 // icons
 $icon-phone: "\e942";
 $icon-clock: "\e94e";
+$icon-map: "\e948";
 $icon-facebook: "\ea90";
 $icon-twitter: "\ea96";
 $icon-linkedin: "\eaca";

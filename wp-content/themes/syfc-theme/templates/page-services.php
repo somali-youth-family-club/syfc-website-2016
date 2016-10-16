@@ -32,9 +32,9 @@
         }
         if( !empty($service_offices) ):
   ?>
-  <div class="accordion js-accordion">
-    <div class="js-accordion-trigger service-summary">
-      <h2><a href="#"><?php echo $service->name; ?></a></h2>
+  <div class="service-accordion js-accordion">
+    <div class="js-accordion-trigger service-summary" id="<?php echo $service->slug; ?>">
+      <h2><?php echo $service->name; ?></h2>
       <p><?php echo $service->description; ?></p>
     </div>
     <div class="js-accordion-content">
@@ -53,7 +53,7 @@
           <?php if($hours) { echo '<span class="hours">' . $hours . '</span>'; }?>
         </p>
         <div class="map-box js-map" data-address="<?php echo $address; ?>"></div>
-        <span class="office-address"><?php echo wpautop($address); ?></span>
+        <span class="office-meta address"><?php echo $address; ?></span>
       </div>
     <?php
         endif;
@@ -67,6 +67,8 @@
     endif;
   ?>
 </div>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCvvaeIF0uoGD-0TAt92sv2x3aTZGqgKbg"></script>
 
 <?php
   get_footer();
