@@ -824,3 +824,17 @@ table {
   .twitter:before {
     content: "";
     font-size: 20px; }
+
+footer {
+  background-color: #404040;
+  color: #f5f5f5;
+  width: 100%; }
+
+.hotline {
+  float: right; }
+
+.footer-links {
+  float: left; }
+
+.hotline > p {
+  margin: 0 auto; }
