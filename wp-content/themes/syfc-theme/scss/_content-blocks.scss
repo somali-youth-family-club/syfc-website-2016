@@ -117,7 +117,10 @@ $bp-accordion: '(min-width: 480px)';
   }
 }
 
-div.picture {
+div.first-picture {
   float: right;
+}
+div.picture {
+  float: left;
   padding: 2em 2em 2em 2em;
 }

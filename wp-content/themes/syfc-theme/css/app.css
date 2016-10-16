@@ -1180,8 +1180,11 @@ label {
     margin: 0;
     max-width: 550px; }
 
+div.first-picture {
+  float: right; }
+
 div.picture {
-  float: right;
+  float: left;
   padding: 2em 2em 2em 2em; }
 
 .facebook {
