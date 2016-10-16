@@ -22,24 +22,27 @@ footer {
     width: 100%;
     height: 100px;  
     padding: 2em;
+}
+
+
+.footer-row > .column {
+    @include grid-column(4);
+}
+
+.hotline {
+    text-align: left;
     font-size: .6em;
 }
 
-footer > div.row {
-    max-width: 90%;
-}
-
-.footer-row {
-    @include grid-column(3);
-    width: 33%;
+.copyright {
+    font-size: .6em;
     text-align: center;
 }
 
-
 .footer-links {
     margin-top: 1em;
+    text-align: right;
     a {
-        text-align: center;
         color: $blue;
     }
 }
