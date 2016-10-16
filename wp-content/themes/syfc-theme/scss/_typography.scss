@@ -117,7 +117,7 @@ h5, h6 {
 
 a {
   color: $purple;
-  text-decoration: underline;
+  text-decoration: none;
   &, &:before, &:after {
     @include transition(background 0.25s ease, color 0.25s ease);
   }

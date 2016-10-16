@@ -9,6 +9,7 @@
   $twitter = $options['twitter'];
   $linkedin = $options['linkedin'];
   $gplus = $options['gplus'];
+  $facebook = $options['facebook'];
 ?>
 
 <footer class="page-footer" role="contentinfo">
@@ -19,6 +20,7 @@
       <?php if($phone) { echo '<span class="phone">' . $phone . '</span>'; } ?>
       <?php if($email) { echo '<a href="mailto:' . $email . '" class="email">Email Us</a>'; } ?>
       <?php if($twitter) { echo '<a href="' . $twitter . '" class="twitter">Twitter</a>'; } ?>
+      <?php if($facebook) { echo '<a href="' . $facebook . '" class="facebook">Facebook</a>'; } ?>
       <?php if($linkedin) { echo '<a href="' . $linkedin . '" class="linkedin">LinkedIn</a>'; } ?>
       <?php if($gplus) { echo '<a href="' . $gplus . '" class="gplus">Google Plus</a>'; } ?>
       <nav class="footer-nav" role="navigation">
