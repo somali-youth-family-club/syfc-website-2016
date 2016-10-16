@@ -18,17 +18,34 @@
 
 footer {
     background-color: $dark;
-    color: $light-grey;
+    color: lighten($grey, 40%);
     width: 100%;
+    height: 100px;  
+    padding: 2em;
+}
+
+.row > div {
+    @include grid-column(3);
+    width: 33%;
+    text-align: center;
+}
+
+.copyright {
+    float: left;
+}
+
+.footer-links {
+    display: inline-block;
     
+    margin-top: 10px;
+    a {
+        text-align: center;
+        color: $blue;
+    }
 }
 
 .hotline {
     float: right;
-}
-
-.footer-links {
-    float: left;
 }
 
 .hotline > p {
