@@ -41,25 +41,26 @@ function filter_events() {
 	$today = date('Y-m-d');
 	$event_args = array(
 		'post_type' => 'event',
-		'orderby' => 'meta_value',
-		'order' => 'ASC',
+    //'meta_key' => 'syafc_event_date',
 		'meta_query' => array(
-			array(
-				'meta_key' => 'syafc_event_date',
-				'meta_value' => $today,
-				'meta_compare' => '>=',
+			'event_date' => array(
+				'key' => 'syafc_event_date',
+				'value' => $today,
+				'compare' => '>=',
 			)
 		),
+    'orderby' => 'event_date',
+		'order' => 'ASC',
 		'posts_per_page' => -1,
 		'post_status' => 'publish'
 	);
 	if (!empty($event_type)) {
 		$event_args['meta_query']['relation'] = 'AND';
-		array_push($event_args['meta_query'], array(
-			'meta_key' => 'syafc_event_type',
-			'meta_value' => $event_type,
-			'meta_compare' => '='
-		));
+		$event_args['meta_query']['event_type'] = array(
+			'key' => 'syafc_event_type',
+			'value' => $event_type,
+			'compare' => '='
+		);
 	}
 	$events = new WP_Query($event_args);
 
