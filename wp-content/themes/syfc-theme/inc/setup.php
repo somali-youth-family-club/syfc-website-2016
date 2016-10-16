@@ -121,6 +121,8 @@ function bamboo_scripts() {
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('bamboo_js');
+
+  wp_localize_script( 'bamboo_js', 'bambooAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 }
 add_action('wp_enqueue_scripts', 'bamboo_scripts', 100);
 

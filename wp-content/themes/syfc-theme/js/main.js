@@ -101,4 +101,39 @@
     // do mobile menu stuff
   }
 
+  // event filtering
+  // gallery ajax wordpress & instagram
+  // ajax memorial gallery filtering/paging
+  function get_wordpress_events(type) {
+		console.log("getting wordpress events, url is", bambooAjax.ajaxurl);
+		var $container = $('.event-list'),
+    		nonce = $container.attr("data-nonce");
+
+    $container.addClass('loading');
+
+    $.ajax({
+      dataType : "json",
+      url : bambooAjax.ajaxurl,
+      data : {
+        action: "filter_events",
+        event_type: JSON.stringify(type),
+        nonce: nonce
+      },
+      success: function(response) {
+				console.log("yay! success!", response);
+        if(response.type == "success") {
+          console.log(response);
+          //display_gallery(response.gallery, response.pagination);
+        }
+        else {
+          console.log("error getting events", response);
+        }
+      },
+      error: function(errorThrown){
+       console.log(errorThrown);
+      }
+    });
+  }
+  get_wordpress_events('');
+
 }(jQuery));
