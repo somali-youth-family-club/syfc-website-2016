@@ -1049,7 +1049,7 @@ footer {
   padding: 2em;
   font-size: .6em; }
 
-.row {
+footer > div.row {
   max-width: 90%; }
 
 .footer-row {
@@ -1199,7 +1199,7 @@ footer {
   padding: 2em;
   font-size: .6em; }
 
-.row {
+footer > div.row {
   max-width: 90%; }
 
 .footer-row {
