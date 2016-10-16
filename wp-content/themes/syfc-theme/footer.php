@@ -19,8 +19,12 @@
       <p>Between 8:00 am and 10:00 pm</p>
     </div>
     
-    <a class="logo" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
-
+    <!--<a class="logo" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>-->
+    
+    <div class="copyright column">
+      <p>Copyright 2016 <?php bloginfo('name'); ?></p>
+    </div>
+    
     <div class="footer-links column">
       <?php if($phone) { echo '<span class="phone">' . $phone . '</span>'; } ?>
       <?php if($email) { echo '<a href="mailto:' . $email . '" class="email">Email Us</a>'; } ?>
