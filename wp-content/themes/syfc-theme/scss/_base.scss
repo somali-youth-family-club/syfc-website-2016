@@ -25,8 +25,23 @@ $em-base: 16px;
   @return $emValues;
 }
 
+// custom breakpoint mixin
+@mixin breakpoint($query) {
+  $valid: true;
+  @if type-of($query) != "string" {
+    @warn "query: #{$query} is not a string";
+    $valid: false;
+  }
+  @if $valid == true {
+    @media #{$query} {
+      @content;
+    }
+  }
+}
+
 // global breakpoints
 $bp-layout: '(max-width: 880px)';
+$bp-typography: '(max-width: 700px)';
 
 // grid variables
 $row-width: em-calc(1000);
@@ -34,14 +49,23 @@ $total-columns: 12;
 $column-gutter: em-calc(30);
 
 // color variables
-$dark: '#404040';
-$dark-alt: '#34495E';
-$grey: '#7D8792';
-$blue: '#3498DB';
-$green: '#2ecc71';
-$purple: '#9b59b6';
+$dark: #404040;
+$dark-alt: #34495E;
+$grey: #7D8792;
+$light-grey: #f5f5f5;
+$blue: #3498DB;
+$green: #2ecc71;
+$purple: #9b59b6;
 
 // fonts
 $heading-font: 'Montserrat', sans-serif;
 $body-font: 'Roboto', sans-serif;
 $icon-font: 'icomoon';
+
+// icons
+$icon-phone: "\e942";
+$icon-clock: "\e94e";
+$icon-facebook: "\ea90";
+$icon-twitter: "\ea96";
+$icon-linkedin: "\eaca";
+$icon-google: "\ea8b";
