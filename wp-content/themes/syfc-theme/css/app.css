@@ -507,7 +507,7 @@ body {
   white-space: nowrap;
   overflow: hidden; }
 
-.icon, .search-form .search-trigger:after, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before {
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -1028,6 +1028,32 @@ table {
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
     transform: scaleX(1); }
+
+.facebook {
+  font-size: 0; }
+  .facebook:before {
+    content: "";
+    font-size: 20px; }
+
+.twitter {
+  font-size: 0; }
+  .twitter:before {
+    content: "";
+    font-size: 20px; }
+
+footer {
+  background-color: #1b1b1b;
+  color: #f5f5f5;
+  width: 100%; }
+
+.hotline {
+  float: right; }
+
+.footer-links {
+  float: left; }
+
+.hotline > p {
+  margin: 0 auto; }
 
 .office-box {
   padding: 1.125em 1.5em;

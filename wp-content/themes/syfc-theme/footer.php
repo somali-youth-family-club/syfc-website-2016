@@ -14,9 +14,14 @@
 
 <footer class="page-footer" role="contentinfo">
   <div class="row">
+    <div class="hotline column">
+      <p>Hotline: 206.779.0138</p>
+      <p>Between 8:00 am and 10:00 pm</p>
+    </div>
+    
     <a class="logo" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
 
-    <div class="footer-links">
+    <div class="footer-links column">
       <?php if($phone) { echo '<span class="phone">' . $phone . '</span>'; } ?>
       <?php if($email) { echo '<a href="mailto:' . $email . '" class="email">Email Us</a>'; } ?>
       <?php if($twitter) { echo '<a href="' . $twitter . '" class="twitter">Twitter</a>'; } ?>
