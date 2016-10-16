@@ -104,6 +104,19 @@ function theme_options_do_page() {
                     </td>
                 </tr>
 
+
+                <?php
+                /**
+                 * Facebook
+                 */
+                ?>
+                <tr valign="top"><th scope="row"><?php _e( 'Facebook', 'bamboo' ); ?></th>
+                    <td>
+                        <input id="bamboo_theme_options[facebook]" class="regular-text" type="text" name="bamboo_theme_options[facebook]" value="<?php esc_attr_e( $options['linkedin'] ); ?>" />
+                        <label class="description" for="bamboo_theme_options[facebook]"><?php _e( 'Facebook page URL', 'bamboo' ); ?></label>
+                    </td>
+                </tr>
+                
                 <?php
                 /**
                  * Google Plus
@@ -137,6 +150,7 @@ function theme_options_validate( $input ) {
     $input['google_angoogle_analytics'] = wp_kses_post( $input['google_analytics'] );
     $input['email'] = wp_kses_post( $input['email'] );
     $input['twitter'] = wp_kses_post( $input['twitter'] );
+    $input['facebook'] = wp_kses_post( $input['facebook'] );
     $input['linkedin'] = wp_kses_post( $input['linkedin'] );
     $input['gplus'] = wp_kses_post( $input['gplus'] );
 
