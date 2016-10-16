@@ -25,7 +25,8 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
         'options'  => array(
           'workshop' => 'Workshop',
           'outreach' => 'Outreach',
-          'cafe' => 'Community Cafe',
+          'community-cafe' => 'Community Cafe',
+          'fundraising' => 'Fundraising',
           'other' => 'Other'
         ),
         'multiple'    => false,

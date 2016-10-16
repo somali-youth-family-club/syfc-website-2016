@@ -4,3 +4,6 @@ node_modules/
 components/
 .sass-cache/
 wp-config.php
+php_errors.log
+php.ini
+Offices-v3.sql
