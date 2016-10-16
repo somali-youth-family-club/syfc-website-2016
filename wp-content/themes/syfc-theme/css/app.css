@@ -507,7 +507,7 @@ body {
   white-space: nowrap;
   overflow: hidden; }
 
-.icon, .search-form .search-trigger:after, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, .facebook:before, .twitter:before {
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -1028,6 +1028,50 @@ table {
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
     transform: scaleX(1); }
+
+.facebook {
+  font-size: 0; }
+  .facebook:before {
+    content: "";
+    font-size: 30px; }
+
+.twitter {
+  font-size: 0; }
+  .twitter:before {
+    content: "";
+    font-size: 30px; }
+
+footer {
+  background-color: #1b1b1b;
+  color: #b1b7be;
+  width: 100%;
+  height: 100px;
+  padding: 2em;
+  font-size: .6em; }
+
+.row {
+  max-width: 90%; }
+
+.footer-row {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 25%;
+  float: left;
+  width: 33%;
+  text-align: center; }
+
+.footer-links {
+  margin-top: 1em; }
+  .footer-links a {
+    text-align: center;
+    color: #3498DB; }
+
+label {
+  display: inline-block;
+  margin-right: 2%; }
+
+.hotline > p {
+  margin: 0 auto; }
 
 .office-box {
   padding: 1.125em 1.5em;
