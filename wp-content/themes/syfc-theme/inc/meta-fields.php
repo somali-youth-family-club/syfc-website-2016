@@ -146,6 +146,75 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
     }
   }
   $meta_boxes[] = array(
+    'id'       => 'home_header',
+    'title'    => 'Homepage Header Services',
+    'pages'    => array( 'page' ),
+    'only_on'    => array(
+      'template' => array( 'templates/page-home.php'),
+    ),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Services Page',
+        'desc' => 'Choose the page with the list of all services',
+        'id' => $prefix . 'services_page',
+        'type' => 'select',
+        'options'  => $page_array,
+        'multiple'    => false,
+        'placeholder' => 'Select a page',
+      ),
+      array(
+        'name' => 'Education Link',
+        'desc' => 'Navigate to <a href="/wp-admin/edit-tags.php?taxonomy=service&post_type=office">Services</a> and copy the slug for Education',
+        'id' => $prefix . 'education_service_slug',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Education Service Name',
+        'desc' => 'Probably just "Education"',
+        'id' => $prefix . 'education_service_name',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Social Services Link',
+        'desc' => 'Navigate to <a href="/wp-admin/edit-tags.php?taxonomy=service&post_type=office">Services</a> and copy the slug for Social Services',
+        'id' => $prefix . 'social_service_slug',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Social Service Name',
+        'desc' => 'Probably just "Social Services"',
+        'id' => $prefix . 'social_service_name',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Family Link',
+        'desc' => 'Navigate to <a href="/wp-admin/edit-tags.php?taxonomy=service&post_type=office">Services</a> and copy the slug for Family',
+        'id' => $prefix . 'family_service_slug',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Family Service Name',
+        'desc' => 'Probably just "Family"',
+        'id' => $prefix . 'family_service_name',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Immigration Link',
+        'desc' => 'Navigate to <a href="/wp-admin/edit-tags.php?taxonomy=service&post_type=office">Services</a> and copy the slug for Immigration',
+        'id' => $prefix . 'immigration_service_slug',
+        'type' => 'text'
+      ),
+      array(
+        'name' => 'Immigration Service Name',
+        'desc' => 'Probably just "Immigration"',
+        'id' => $prefix . 'immigration_service_name',
+        'type' => 'text'
+      ),
+    ),
+  );
+  $meta_boxes[] = array(
     'id'       => 'home_meta_about',
     'title'    => 'About Us Section',
     'pages'    => array( 'page' ),

@@ -15,6 +15,14 @@ function bamboo_admin_init(){
     );
 }
 
+
+// Validate user input and return validated data
+function bamboo_validate_options( $input ) {
+	$valid = array();
+	$valid['bamboo_google_analytics_id'] = sanitize_text_field( $input['bamboo_google_analytics_id'] );
+	return $valid;
+}
+
 /* theme options page */
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );
@@ -116,7 +124,7 @@ function theme_options_do_page() {
                         <label class="description" for="bamboo_theme_options[facebook]"><?php _e( 'Facebook page URL', 'bamboo' ); ?></label>
                     </td>
                 </tr>
-                
+
                 <?php
                 /**
                  * Google Plus

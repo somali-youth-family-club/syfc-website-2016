@@ -16,8 +16,23 @@
   position: relative;
   min-height: 300px;
   padding: em-calc(50) 0;
-  background: url(../images/header.jpg) no-repeat center center;
+  background: url(../images/header.jpg) no-repeat 50% 25%;
   background-size: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($dark-alt, 0.6);
+  }
+
+  .row {
+    position: relative;
+    z-index: 1;
+  }
 
   .logo {
     width: 250px;

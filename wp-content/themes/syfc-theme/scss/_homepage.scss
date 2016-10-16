@@ -1,3 +1,48 @@
+// header
+.home-banner-callouts {
+  margin: 0 auto;
+  max-width: 550px;
+  @include clearfix;
+
+  a {
+    display: inline-block;
+    width: 270px;
+    padding: em-calc(10) em-calc(50) em-calc(40);
+    color: #fff;
+    text-align: center;
+    &:before {
+      @extend .icon;
+      display: inline-block;
+      font-size: 100px;
+      line-height: 1;
+      @include scale(1);
+      @include transform-origin(center bottom);
+      @include transition(all 0.3s ease);
+    }
+
+    &:hover, &:focus {
+      &:before {
+        color: $blue;
+        @include scale(1.15);
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: 100%;
+      padding: em-calc(6) em-calc(10);
+      margin-top: 15px;
+      background-color: $blue;
+      font-weight: bold;
+    }
+
+    &.education:before { content: $icon-education; }
+    &.social-services:before { content: $icon-housing; }
+    &.family:before { content: $icon-family; }
+    &.immigration:before { content: $icon-paperwork; }
+  }
+}
+
 // about section
 .home-about-section {
   .about-blurb {
