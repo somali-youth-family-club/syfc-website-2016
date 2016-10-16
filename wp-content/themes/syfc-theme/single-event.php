@@ -25,7 +25,7 @@
 		      <?php the_content(); ?>
 		    </div>
 		    
-		    <!--<div class="event-type">-->
+		    <!--<div class="event-type">-->
 		    <!--	<label for="event_type">This event is a </label>-->
 		    <!--	<?php foreach($types as $type) {print_r($type);}?>-->
 		    <!--</div>-->
