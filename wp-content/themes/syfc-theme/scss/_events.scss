@@ -238,9 +238,20 @@
   }
 }
 
-div.event_type {
-    padding-right: 10px;
-    background-color: blue;
+div.event-content {
+  margin: 0 auto;
 }
 
+div.entry {
+  margin-left: 2em;
+  background-color: darken($light-grey, 10%);
+}
 
+div.event-date {
+  font-size: .8em; 
+}
+
+div.event-time:before {
+  @extend .icon;
+  content: $icon-clock;
+}

@@ -3,7 +3,7 @@
 	get_header();
 ?>
 
-	<div class="row content">
+	<div class="row content event-box event-content">
 		<?php while (have_posts()) : the_post();
 			$types = rwmb_meta('syafc_event_type', 'type=checkbox_list');
 			$date = rwmb_meta('syafc_event_date');
@@ -31,13 +31,16 @@
 		    <!--</div>-->
 		    
 		    <div class="event-date">
-		    	This event will be on <?php echo date_format(new DateTime($date), 'l jS F Y'); ?> at <?php echo date_format(new DateTime($time), 'g:ia'); ?>.
+		    	<?php $date =new DateTime($date); ?>
+		    	<div class="date"><?php echo date_format($date, 'M'); ?><span class="day"><?php echo date_format($date, 'j'); ?></span></div>
+		    	
 		    </div>
 		    
-		
-		    <footer>
-		      <?php comments_template('/comments.php'); ?>
-		    </footer>
+		    <div class="event-time"><?php echo date_format(new DateTime($time), ' g:ia'); ?>.
+		    </div>
+		    
+		    <?php if() ?>
+		    
 		  </article>
 		
 		<?php endwhile; ?>

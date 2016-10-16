@@ -507,7 +507,7 @@ body {
   white-space: nowrap;
   overflow: hidden; }
 
-.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before {
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -1480,6 +1480,15 @@ label {
       .filter-box .event-filter[data-type=outreach]:hover, .filter-box .event-filter[data-type=outreach]:focus {
         background-color: #7c4792; }
 
-div.event_type {
-  padding-right: 10px;
-  background-color: blue; }
+div.event-content {
+  margin: 0 auto; }
+
+div.entry {
+  margin-left: 2em;
+  background-color: #dddddd; }
+
+div.event-date {
+  font-size: .8em; }
+
+div.event-time:before {
+  content: ""; }
