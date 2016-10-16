@@ -138,13 +138,13 @@
         ev;
     for (var i = 0; i < events.length; i++) {
       ev = events[i];
-      content += '<li><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
+      content += '<li class="event-box"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
       content += '<h3>' + ev.post_title + '</h3>';
       content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
       if (ev.need_volunteers === '1') {
         content += '<span class="volunteers">We need volunteers!</span>';
       }
-      content += '<a href="' + ev.permalink + '" class="simple-button">Full Event</a>';
+      content += '<a href="' + ev.permalink + '" class="button">Full Event</a>';
       content += '</li>';
     }
 

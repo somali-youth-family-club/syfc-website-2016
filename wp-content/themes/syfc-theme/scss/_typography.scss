@@ -215,28 +215,16 @@ hr {
 
 .button {
   display: inline-block;
-  padding: em-calc(6) em-calc(24) em-calc(8);
-  border: 5px solid $blue;
-  background-color: transparent;
-  color: $blue;
-  font-size: 18px;
-  font-weight: bold;
+  padding: em-calc(6) em-calc(24);
+  background-color: $blue;
+  color: #fff;
+  font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
+  @include border-radius(4px);
 
   &:hover, &:focus {
-    background-color: $blue;
-    color: #fff;
-  }
-
-  &.white {
-    border-color: #fff;
-    color: #fff;
-
-    &:hover, &:focus {
-      background-color: #fff;
-      color: $blue;
-    }
+    background-color: darken($blue, 20%);
   }
 }
 

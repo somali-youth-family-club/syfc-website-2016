@@ -10,7 +10,7 @@
     <?php the_content(); ?>
   <?php endwhile; ?>
 
-  <div class="row">
+  <div class="nested row">
     <ul class="event-list menu" data-nonce="<?php echo $nonce; ?>"></ul>
     <aside class="event-filters">
     </aside>
