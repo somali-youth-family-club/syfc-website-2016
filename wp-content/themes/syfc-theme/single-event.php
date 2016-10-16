@@ -39,10 +39,10 @@
 		    <div class="event-time"><?php echo date_format(new DateTime($time), ' g:ia'); ?>.
 		    </div>
 		    
-		    
 		    <!--Volunteer information goes here-->
 		    <?php if(): ?>
 		    <?php endif; ?>
+
 		    
 		  </article>
 		
