@@ -1180,6 +1180,10 @@ label {
     margin: 0;
     max-width: 550px; }
 
+div.picture {
+  float: right;
+  padding: 2em 2em 2em 2em; }
+
 .facebook {
   font-size: 0; }
   .facebook:before {
