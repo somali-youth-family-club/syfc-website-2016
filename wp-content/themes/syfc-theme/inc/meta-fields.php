@@ -53,13 +53,6 @@ function bamboo_register_meta_boxes( $meta_boxes ) {
           'timeFormat' => 'h:mm TT',
           'showButtonPanel' => true,
         ),
-      ),
-      array(
-        'name' => 'Volunteers needed?',
-        'desc' => 'Check this box if you still need volunteers for this event. Remember to un-check it when there are enough volunteers.',
-        'id'   => $prefix . 'event_volunteers',
-        'type' => 'checkbox',
-        'std'  => 0,
       )
     ),
     'validation' => array(
