@@ -1166,11 +1166,7 @@ footer {
   width: 33%;
   text-align: center; }
 
-.copyright {
-  float: left; }
-
 .footer-links {
-  display: inline-block;
   margin-top: 1em; }
   .footer-links a {
     text-align: center;
@@ -1179,9 +1175,6 @@ footer {
 label {
   display: inline-block;
   margin-right: 2%; }
-
-.hotline {
-  float: right; }
 
 .hotline > p {
   margin: 0 auto; }
@@ -1439,6 +1432,6 @@ label {
       .filter-box .event-filter[data-type=outreach]:hover, .filter-box .event-filter[data-type=outreach]:focus {
         background-color: #7c4792; }
 
-.event_type {
+div.event_type {
   padding-right: 10px;
   background-color: blue; }

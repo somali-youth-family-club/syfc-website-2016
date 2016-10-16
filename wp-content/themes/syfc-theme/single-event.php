@@ -25,17 +25,14 @@
 		      <?php the_content(); ?>
 		    </div>
 		    
-		    <div class="event-type">
-		    	<?php foreach($types as $type) {print_r($type);}?>
-		    </div>
+		    <!--<div class="event-type">-->
+		    <!--	<label for="event_type">This event is a </label>-->
+		    <!--	<?php foreach($types as $type) {print_r($type);}?>-->
+		    <!--</div>-->
 		    
 		    <div class="event-date">
-		    	<?php print_r($date); ?>
+		    	This event will be on <?php echo date_format(new DateTime($date), 'l jS F Y'); ?> at <?php echo date_format(new DateTime($time), 'g:ia'); ?>.
 		    </div>
-		    	  
-		    <div class="event-time">
-		    	<?php print_r($time); ?>
-		    </div>  
 		    
 		
 		    <footer>
