@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 var paths = {
   styles: ['./scss/style.scss'],
-  scripts: ['./js/main.js']
+  scripts: ['./components/fastclick/lib/fastclick.js', './js/main.js']
 };
 
 gulp.task('styles', ['components'], function () {

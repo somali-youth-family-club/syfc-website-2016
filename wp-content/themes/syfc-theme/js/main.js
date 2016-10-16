@@ -1,6 +1,8 @@
 (function($) {
   'use strict';
 
+  FastClick.attach(document.body);
+
   // google maps
   var key = 'AIzaSyCvvaeIF0uoGD-0TAt92sv2x3aTZGqgKbg';
 
@@ -71,6 +73,32 @@
         $(target).trigger('click');
       }
     }
+  }
+
+  // open search form
+  var $searchTrigger = $('.search-trigger');
+  if ($searchTrigger) {
+    $searchTrigger.on('click', function(e) {
+      e.preventDefault();
+      $(this).parents('.search-form').toggleClass('open');
+    });
+    // close search form if clicking elsewhere
+    $(document.body).on('click', function(e) {
+      if (!$(event.target).closest('.search-form').length) {
+        $searchTrigger.parents('.search-form').removeClass('open');
+      }
+    });
+  }
+
+  // mobile menu
+  var $menuTrigger = $('.js-menu-trigger');
+  $menuTrigger.on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('open');
+  });
+  // max width set in _header.scss
+  if (Modernizr.mq('only screen and (max-width: 869px)')) {
+    // do mobile menu stuff
   }
 
 }(jQuery));
