@@ -521,11 +521,7 @@ body {
   height: 1px;
   overflow: hidden; }
 
-<<<<<<< f9504d887c2dedcedde552e87fe36e591b36f957
-.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before, .home-callouts > div:before {
-=======
-.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, .home-banner-callouts a:before, .home-callouts > div:before {
->>>>>>> home page header styles
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before, .home-banner-callouts a:before, .home-callouts > div:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
