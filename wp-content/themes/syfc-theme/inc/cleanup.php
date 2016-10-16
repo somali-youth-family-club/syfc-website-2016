@@ -198,9 +198,9 @@ class Bamboo_Nav_Walker extends Walker_Nav_Menu {
 
   function start_lvl(&$output, $depth = 0, $args = array()) {
     if($depth == 0) {
-      $output .= "\n<ul class=\"dropdown-menu\" role=\"menu\">\n";
+      $output .= "\n<ul class=\"menu dropdown-menu\" role=\"menu\">\n";
     } else {
-      $output .= "\n<ul class=\"nested-menu\" role=\"menu\">\n";
+      $output .= "\n<ul class=\"menu nested-menu\" role=\"menu\">\n";
     }
   }
 

@@ -1,73 +1,73 @@
 <?php
 /**
  * Custom functions
- * Includes sample shortcodes
  */
 
-//fix annoying shortcode/wpautop problems
-add_filter('the_content', 'shortcode_empty_paragraph_fix');
-function shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>[' => '[',
-		']</p>' => ']',
-		']<br />' => ']'
+/**
+* Event filter ajax functions
+*/
+add_action("wp_ajax_filter_events", "filter_events");
+add_action("wp_ajax_nopriv_filter_events", "filter_events");
+
+// add meta information to event query
+function add_event_extras( $posts ) {
+  foreach ( $posts as $key => $post ) {
+		$event_date = rwmb_meta('syafc_event_date', array(), $post->ID);
+    $event_date = new DateTime($event_date);
+		$event_type = rwmb_meta('syafc_event_type', array(), $post->ID);
+		$event_volunteers = rwmb_meta('syafc_event_volunteers', array(), $post->ID);
+
+    $posts[ $key ]->event_date = array(
+      'month' => $event_date->format('M'),
+      'day' => $event_date->format('d')
+    );
+    $posts[ $key ]->event_type = $event_type;
+		$posts[ $key ]->need_volunteers = $event_volunteers;
+    $posts[ $key ]->permalink = get_permalink($post->ID);
+  }
+  return $posts;
+}
+
+function filter_events() {
+	if ( !wp_verify_nonce( $_REQUEST['nonce'], "event_nonce")) {
+    exit("Request not verified.");
+  }
+
+	//add metadata filter for custom values
+	add_filter( 'the_posts', 'add_event_extras', 10 );
+
+	// get request params
+	$event_type = json_decode(stripslashes($_REQUEST['event_type']));
+	$today = date('Y-m-d');
+	$event_args = array(
+		'post_type' => 'event',
+    //'meta_key' => 'syafc_event_date',
+		'meta_query' => array(
+			'event_date' => array(
+				'key' => 'syafc_event_date',
+				'value' => $today,
+				'compare' => '>=',
+			)
+		),
+    'orderby' => 'event_date',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+		'post_status' => 'publish'
 	);
+	if (!empty($event_type)) {
+		$event_args['meta_query']['relation'] = 'AND';
+		$event_args['meta_query']['event_type'] = array(
+			'key' => 'syafc_event_type',
+			'value' => $event_type,
+			'compare' => '='
+		);
+	}
+	$events = new WP_Query($event_args);
 
-	$content = strtr($content, $array);
-	return $content;
-}
+	$result['type'] = "success";
+  $result['events'] = $events->posts;
+	$result = json_encode($result);
+	print_r($result);
 
-//columns
-// column group/row: [col-group] [/col-group], no atts
-function bamboo_colgroup_func( $atts, $content = null ) {
-	extract( shortcode_atts( array(
-	), $atts ) );
-
-  return '<div class="nested row">'. do_shortcode($content) .'</div>';
-}
-add_shortcode( 'col-group', 'bamboo_colgroup_func' );
-
-// half columns: [half] [/half]
-function bamboo_halfcol_func( $atts, $content = null ) {
-  extract( shortcode_atts( array(
-  ), $atts ) );
-
-  return '<div class="half section">'. do_shortcode($content) .'</div>';
-}
-add_shortcode( 'half', 'bamboo_halfcol_func' );
-
-// third columns: [third] [/third]
-function bamboo_thirdcol_func( $atts, $content = null ) {
-  extract( shortcode_atts( array(
-  ), $atts ) );
-
-  return '<div class="third section">'. do_shortcode($content) .'</div>';
-}
-add_shortcode( 'third', 'bamboo_thirdcol_func' );
-
-// two-thirds columns: [two-thirds] [/two-thirds]
-function bamboo_twothirdscol_func( $atts, $content = null ) {
-  extract( shortcode_atts( array(
-  ), $atts ) );
-
-  return '<div class="two-thirds section">'. do_shortcode($content) .'</div>';
-}
-add_shortcode( 'two-thirds', 'bamboo_twothirdscol_func' );
-
-//hook shortcodes into tinymce editor
-add_action('init', 'add_bamboo_buttons');
-function add_bamboo_buttons() {
-   if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') )
-   {
-     add_filter('mce_external_plugins', 'bamboo_shortcode_plugin');
-     add_filter('mce_buttons', 'bamboo_shortcode_buttons');
-   }
-}
-function bamboo_shortcode_buttons($buttons) {
-   array_push($buttons, "half", "third", "two-thirds");
-   return $buttons;
-}
-function bamboo_shortcode_plugin($plugin_array) {
-   $plugin_array['mboy'] = get_bloginfo('template_url').'/admin/admincodes.js';
-   return $plugin_array;
+  die();
 }
