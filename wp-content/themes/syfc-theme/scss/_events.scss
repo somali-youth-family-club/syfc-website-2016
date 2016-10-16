@@ -1,3 +1,242 @@
+@include keyframes(spinner) {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+  }
+};
+.event-list {
+  position: relative;
+  @include grid-column(8);
+  min-height: 50px;
+  &.loading {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border: 4px solid $blue;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      @include border-radius(50%);
+      @include animation(spinner 1.1s infinite linear);
+    }
+  }
+}
+
+.event-box {
+  position: relative;
+  padding: em-calc(14) em-calc(20) em-calc(14) em-calc(120);
+  margin: 0 0 em-calc(16);
+  background-color: $light-grey;
+  @include clearfix;
+
+  .date {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 75px;
+    border: 5px solid $grey;
+    border-top: 0;
+    @include border-radius(0 0 8px 8px);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -5px;
+      right: -5px;
+      height: 20px;
+      @include border-radius(8px 8px 0 0);
+      background-color: $grey;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -26px;
+      left: 10px;
+      right: 10px;
+      height: 7px;
+      border-left: 5px solid $grey;
+      border-right: 5px solid $grey;
+    }
+  }
+  .day {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 48px;
+    line-height: 0.75;
+    font-family: $heading-font;
+    font-weight: normal;
+    color: $dark;
+  }
+
+  .button {
+    background-color: darken($grey, 10%);
+    &:hover, &:focus {
+      background-color: darken($grey, 30%);
+    }
+  }
+
+  // event type colors
+  &.workshop {
+    .date, .date:after {
+      border-color: $blue;
+    }
+    .date:before {
+      background-color: $blue;
+    }
+    .button {
+      background-color: $blue;
+      &:hover, &:focus {
+        background-color: darken($blue, 20%);
+      }
+    }
+  }
+  &.cafe {
+    .date, .date:after {
+      border-color: $green;
+    }
+    .date:before {
+      background-color: $green;
+    }
+    .button {
+      background-color: $green;
+      &:hover, &:focus {
+        background-color: darken($green, 20%);
+      }
+    }
+  }
+  &.outreach {
+    .date, .date:after {
+      border-color: $purple;
+    }
+    .date:before {
+      background-color: $purple;
+    }
+    .button {
+      background-color: $purple;
+      &:hover, &:focus {
+        background-color: darken($purple, 20%);
+      }
+    }
+  }
+
+  h3 {
+    letter-spacing: 0;
+    margin-bottom: 6px;
+    @include breakpoint($bp-typography) {
+      font-size: 26px;
+    };
+  }
+
+  p {
+    margin-bottom: em-calc(8);
+  }
+
+  .volunteers {
+    display: inline-block;
+    padding: em-calc(4) 0;
+    font-style: italic;
+    color: #d67400;
+  }
+
+  .button {
+    float: right;
+    margin-top: -4px;
+  }
+}
+
+// filtering
+.event-filters {
+  @include grid-column(4);
+}
+
+.filter-box {
+  padding: em-calc(24) em-calc(20);
+  background-color: $dark-alt;
+
+  h4 {
+    color: $light-grey;
+  }
+
+  .event-filter {
+    position: relative;
+    display: block;
+    padding: em-calc(8) em-calc(10) em-calc(8) em-calc(50);
+    margin-bottom: em-calc(10);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: darken($light-grey, 20%);
+    color: $dark;
+    &:hover, &:focus {
+      background-color: darken($light-grey, 40%);
+    }
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      @include border-radius(50%);
+    }
+    &:before {
+      height: 30px;
+      width: 30px;
+      margin-top: -15px;
+      background-color: #fff;
+    }
+    &:after {
+      width: 24px;
+      height: 24px;
+      margin-top: -12px;
+      margin-left: 3px;
+      background-color: darken($light-grey, 20%);
+      @include scale(0);
+      @include transition(all 0.3s ease);
+    }
+    &.selected:after {
+      @include scale(1);
+    }
+
+    &[data-type=workshop] {
+      background-color: $blue;
+      color: #fff;
+      &:after {
+        background-color: $blue;
+      }
+      &:hover, &:focus {
+        background-color: darken($blue, 20%);
+      }
+    }
+    &[data-type=cafe] {
+      background-color: $green;
+      color: #fff;
+      &:after {
+        background-color: $green;
+      }
+      &:hover, &:focus {
+        background-color: darken($green, 20%);
+      }
+    }
+    &[data-type=outreach] {
+      background-color: $purple;
+      color: #fff;
+      &:after {
+        background-color: $purple;
+      }
+      &:hover, &:focus {
+        background-color: darken($purple, 20%);
+      }
+    }
+  }
+}
 .event_type {
     padding-right: 10px;
     background-color: blue;

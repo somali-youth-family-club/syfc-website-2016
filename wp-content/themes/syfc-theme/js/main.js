@@ -1,6 +1,8 @@
 (function($) {
   'use strict';
 
+  FastClick.attach(document.body);
+
   // google maps
   var key = 'AIzaSyCvvaeIF0uoGD-0TAt92sv2x3aTZGqgKbg';
 
@@ -71,6 +73,112 @@
         $(target).trigger('click');
       }
     }
+  }
+
+  // open search form
+  var $searchTrigger = $('.search-trigger');
+  if ($searchTrigger) {
+    $searchTrigger.on('click', function(e) {
+      e.preventDefault();
+      $(this).parents('.search-form').toggleClass('open');
+    });
+    // close search form if clicking elsewhere
+    $(document.body).on('click', function(e) {
+      if (!$(event.target).closest('.search-form').length) {
+        $searchTrigger.parents('.search-form').removeClass('open');
+      }
+    });
+  }
+
+  // mobile menu
+  var $menuTrigger = $('.js-menu-trigger');
+  $menuTrigger.on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('open');
+  });
+  // max width set in _header.scss
+  if (Modernizr.mq('only screen and (max-width: 869px)')) {
+    // do mobile menu stuff
+  }
+
+  // event filtering ajax call
+  function get_wordpress_events($el, type) {
+		console.log("getting wordpress events, url is", bambooAjax.ajaxurl);
+		var nonce = $el.attr("data-nonce");
+
+    $el.addClass('loading');
+
+    $.ajax({
+      dataType : "json",
+      url : bambooAjax.ajaxurl,
+      data : {
+        action: "filter_events",
+        event_type: JSON.stringify(type),
+        nonce: nonce
+      },
+      success: function(response) {
+				console.log("yay! success!", response);
+        if(response.type == "success") {
+          console.log(response);
+          display_events($el, response.events);
+        }
+        else {
+          console.log("error getting events", response);
+        }
+      },
+      error: function(errorThrown){
+       console.log(errorThrown);
+      }
+    });
+  }
+
+  // event display function
+  function display_events($el, events) {
+    var content = '',
+        ev;
+    for (var i = 0; i < events.length; i++) {
+      ev = events[i];
+      content += '<li class="event-box ' + ev.event_type + '"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
+      content += '<h3>' + ev.post_title + '</h3>';
+      content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
+      if (ev.need_volunteers === '1') {
+        content += '<span class="volunteers">We need volunteers!</span>';
+      }
+      content += '<a href="' + ev.permalink + '" class="button">Full Event</a>';
+      content += '</li>';
+    }
+
+    $el.removeClass('loading');
+    $el.html(content);
+  }
+
+  // event filter calls
+  var $event_container = $('.event-list'),
+      $filter_container = $('.js-event-filters');
+  if ($event_container) {
+    get_wordpress_events($event_container, '');
+
+    // attach click event to filter links
+    $filter_container.on('click', 'a', function(e) {
+      e.preventDefault();
+
+      var $this = $(this);
+
+      // don't do anything if it's already selected
+      if ($this.hasClass('selected')) {
+        return;
+      }
+
+      // update classes
+      $filter_container.find('a').removeClass('selected');
+      $this.addClass('selected');
+
+      var type = $this.data('type');
+      if (type === 'all') {
+        type = '';
+      }
+      get_wordpress_events($event_container, type);
+    });
   }
 
 }(jQuery));

@@ -8,6 +8,7 @@
     margin-bottom: 2px;
   }
 }
+
 .office-meta {
   margin-bottom: em-calc(6);
 
@@ -52,6 +53,7 @@
 }
 
 // generic accordions
+$bp-accordion: '(min-width: 480px)';
 .js-accordion-trigger {
   cursor: pointer;
 
@@ -59,12 +61,18 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 30px;
-    width: 40px;
-    height: 8px;
-    margin-top: -4px;
+    right: 20px;
+    width: 30px;
+    height: 6px;
+    margin-top: -3px;
     background: #fff;
     @include transition(all 0.4s ease);
+    @include breakpoint($bp-accordion) {
+      right: 30px;
+      width: 40px;
+      height: 8px;
+      margin-top: -4px;
+    }
   }
   &:after {
     @include rotate(90deg);
@@ -86,9 +94,17 @@
 }
 .service-summary {
   position: relative;
-  padding: em-calc(10) em-calc(24) em-calc(20);
+  padding: em-calc(10) em-calc(62) em-calc(20) em-calc(24);
   background-color: $dark-alt;
   color: #fff;
+  @include transition(background 0.2s ease);
+  &:hover {
+    background-color: darken($dark-alt, 20%);
+  }
+
+  @include breakpoint($bp-accordion) {
+    padding-right: em-calc(86);
+  };
 
   h2 {
     margin: 0;

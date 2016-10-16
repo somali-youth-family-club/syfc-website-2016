@@ -24,13 +24,18 @@
 
 <body>
   <header class="page-header" role="banner">
-    <a class="logo" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
-    <nav class="nav-main" role="navigation">
-      <?php get_template_part('searchform'); ?>
+    <div class="row">
+      <a class="logo" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+    </div>
+  </header>
+  <nav class="nav-main" role="navigation">
+    <div class="row">
+      <a href="#" class="mobile-menu-trigger js-menu-trigger">Menu <i class="icon-menu"></i></a>
       <?php
         if (has_nav_menu('primary_navigation')) {
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'menu' ));
+          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'menu main-menu' ));
         }
+        get_template_part('searchform');
       ?>
-    </nav>
-  </header>
+    </div>
+  </nav>

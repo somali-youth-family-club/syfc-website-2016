@@ -16,6 +16,10 @@ html {
 
 .row {
   @include grid-row();
+  &.nested {
+    margin-left: #{-($column-gutter/2)};
+    margin-right: #{-($column-gutter/2)};
+  }
 }
 
 .content-row {

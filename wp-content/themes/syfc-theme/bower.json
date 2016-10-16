@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "2.1.1",
     "monkee-mixins": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "fastclick": "latest"
   },
   "devDependencies": {}
 }

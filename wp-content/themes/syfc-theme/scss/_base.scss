@@ -39,6 +39,15 @@ $em-base: 16px;
   }
 }
 
+// mixins missing transform-origin
+@mixin transform-origin($origin...) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
 // global breakpoints
 $bp-layout: '(min-width: 880px)';
 $bp-typography: '(min-width: 700px)';
@@ -49,7 +58,7 @@ $total-columns: 12;
 $column-gutter: em-calc(30);
 
 // color variables
-$dark: #404040;
+$dark: #1b1b1b;
 $dark-alt: #34495E;
 $grey: #7D8792;
 $light-grey: #f5f5f5;
@@ -66,6 +75,7 @@ $icon-font: 'icomoon';
 $icon-phone: "\e942";
 $icon-clock: "\e94e";
 $icon-map: "\e948";
+$icon-search: "\e986";
 $icon-facebook: "\ea90";
 $icon-twitter: "\ea96";
 $icon-linkedin: "\eaca";
