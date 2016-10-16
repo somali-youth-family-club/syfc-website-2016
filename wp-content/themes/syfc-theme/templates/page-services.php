@@ -53,7 +53,7 @@
           <?php if($hours) { echo '<span class="hours">' . $hours . '</span>'; }?>
         </p>
         <div class="map-box js-map" data-address="<?php echo $address; ?>"></div>
-        <span class="office-address"><?php echo wpautop($address); ?></span>
+        <span class="office-meta address"><?php echo $address; ?></span>
       </div>
     <?php
         endif;
@@ -67,6 +67,8 @@
     endif;
   ?>
 </div>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCvvaeIF0uoGD-0TAt92sv2x3aTZGqgKbg"></script>
 
 <?php
   get_footer();
