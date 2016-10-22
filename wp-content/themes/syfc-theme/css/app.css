@@ -527,7 +527,7 @@ body {
   height: 1px;
   overflow: hidden; }
 
-.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, div.event-time:before, .home-banner-callouts a:before, .home-callouts > div:before {
+.icon, .search-form .search-trigger:after, .facebook:before, .twitter:before, .office-meta .phone:before, .office-meta .hours:before, .office-meta.address:before, .event-box .event-meta .time:before, .home-banner-callouts a:before, .home-callouts > div:before {
   font-family: "icomoon";
   speak: none;
   font-style: normal;
@@ -1354,18 +1354,22 @@ label {
     display: table; }
   .event-box:after {
     clear: both; }
+  .event-box.no-results {
+    padding: 1.25em;
+    font-size: 18px; }
   .event-box .date {
     position: absolute;
     top: 40px;
     left: 20px;
     width: 75px;
     border: 5px solid #7D8792;
-    border-top: 0;
+    border-top: 0px solid transparent;
     -webkit-border-radius: 0 0 8px 8px;
     -moz-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
     text-align: center;
     font-size: 14px;
+    line-height: 1.6;
     font-weight: bold;
     text-transform: uppercase; }
     .event-box .date:before {
@@ -1396,6 +1400,12 @@ label {
     font-family: "Montserrat", sans-serif;
     font-weight: normal;
     color: #1b1b1b; }
+  .event-box .event-meta {
+    margin: -20px 0 20px; }
+    .event-box .event-meta .time:before {
+      content: "";
+      display: inline-block;
+      padding-right: 6px; }
   .event-box .button {
     background-color: #717a83; }
     .event-box .button:hover, .event-box .button:focus {
@@ -1525,19 +1535,6 @@ label {
         background-color: #9b59b6; }
       .filter-box .event-filter[data-type=outreach]:hover, .filter-box .event-filter[data-type=outreach]:focus {
         background-color: #7c4792; }
-
-div.event-content {
-  margin: 0 auto; }
-
-div.entry {
-  margin-left: 2em;
-  background-color: #dddddd; }
-
-div.event-date {
-  font-size: .8em; }
-
-div.event-time:before {
-  content: ""; }
 
 .home-banner-callouts {
   margin: 0 auto;

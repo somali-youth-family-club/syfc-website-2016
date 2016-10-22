@@ -41,16 +41,22 @@ $bp-events: '(min-width: 760px)';
   background-color: $light-grey;
   @include clearfix;
 
+  &.no-results {
+    padding: em-calc(20);
+    font-size: 18px;
+  }
+
   .date {
     position: absolute;
     top: 40px;
     left: 20px;
     width: 75px;
     border: 5px solid $grey;
-    border-top: 0;
+    border-top: 0px solid transparent;
     @include border-radius(0 0 8px 8px);
     text-align: center;
     font-size: 14px;
+    line-height: 1.6;
     font-weight: bold;
     text-transform: uppercase;
 
@@ -83,6 +89,16 @@ $bp-events: '(min-width: 760px)';
     font-family: $heading-font;
     font-weight: normal;
     color: $dark;
+  }
+
+  .event-meta {
+    margin: -20px 0 20px;
+    .time:before {
+      @extend .icon;
+      content: $icon-clock;
+      display: inline-block;
+      padding-right: 6px;
+    }
   }
 
   .button {
@@ -246,22 +262,4 @@ $bp-events: '(min-width: 760px)';
       }
     }
   }
-}
-
-div.event-content {
-  margin: 0 auto;
-}
-
-div.entry {
-  margin-left: 2em;
-  background-color: darken($light-grey, 10%);
-}
-
-div.event-date {
-  font-size: .8em;
-}
-
-div.event-time:before {
-  @extend .icon;
-  content: $icon-clock;
 }

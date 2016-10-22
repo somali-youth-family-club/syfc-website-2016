@@ -948,6 +948,7 @@
 		console.log("getting wordpress events, url is", bambooAjax.ajaxurl);
 		var nonce = $el.attr("data-nonce");
 
+    $el.html("");
     $el.addClass('loading');
 
     $.ajax({
@@ -978,16 +979,22 @@
   function display_events($el, events) {
     var content = '',
         ev;
-    for (var i = 0; i < events.length; i++) {
-      ev = events[i];
-      content += '<li class="event-box ' + ev.event_type + '"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
-      content += '<h3>' + ev.post_title + '</h3>';
-      content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
-      if (ev.need_volunteers === '1') {
-        content += '<span class="volunteers">We need volunteers!</span>';
+    // no events case
+    if (events.length === 0) {
+      content = '<div class="event-box no-results">Sorry, no events were found. Try selecting "All Events" or try again later.</div>';
+    }
+    else {
+      for (var i = 0; i < events.length; i++) {
+        ev = events[i];
+        content += '<li class="event-box ' + ev.event_type + '"><div class="date">' + ev.event_date.month + '<span class="day">' + ev.event_date.day + '</span></div>';
+        content += '<h3>' + ev.post_title + '</h3>';
+        content += '<p>' + ev.post_content.substring(0, 100) + '... </p>';
+        if (ev.need_volunteers === '1') {
+          content += '<span class="volunteers">We need volunteers!</span>';
+        }
+        content += '<a href="' + ev.permalink + '" class="button">Full Event</a>';
+        content += '</li>';
       }
-      content += '<a href="' + ev.permalink + '" class="button">Full Event</a>';
-      content += '</li>';
     }
 
     $el.removeClass('loading');
