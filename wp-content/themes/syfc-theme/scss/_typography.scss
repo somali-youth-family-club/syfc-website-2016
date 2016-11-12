@@ -26,20 +26,6 @@ body {
   }
 }
 
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.visually-hidden {
-  position: absolute;
-  top: -999px;
-  left: -999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 .icon {
   font-family: $icon-font;
   speak: none;

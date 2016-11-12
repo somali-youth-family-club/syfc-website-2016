@@ -73,6 +73,9 @@
         $(target).trigger('click');
       }
     }
+
+    // copy office google map to accordion content when opened
+    
   }
 
   // open search form
